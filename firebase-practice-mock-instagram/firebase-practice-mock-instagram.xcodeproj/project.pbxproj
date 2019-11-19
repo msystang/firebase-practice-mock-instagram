@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA30E89323846BFB00734AE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89223846BFB00734AE0 /* AppDelegate.swift */; };
+		EA30E89523846BFB00734AE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89423846BFB00734AE0 /* SceneDelegate.swift */; };
+		EA30E89723846BFB00734AE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89623846BFB00734AE0 /* ViewController.swift */; };
+		EA30E89A23846BFB00734AE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA30E89823846BFB00734AE0 /* Main.storyboard */; };
+		EA30E89D23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89B23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodeld */; };
+		EA30E89F23846C0200734AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA30E89E23846C0200734AE0 /* Assets.xcassets */; };
+		EA30E8A223846C0200734AE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA30E8A023846C0200734AE0 /* LaunchScreen.storyboard */; };
+		EA30E8AD23846C0200734AE0 /* firebase_practice_mock_instagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8AC23846C0200734AE0 /* firebase_practice_mock_instagramTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA30E8A923846C0200734AE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA30E88723846BFB00734AE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA30E88E23846BFB00734AE0;
+			remoteInfo = "firebase-practice-mock-instagram";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EA30E88F23846BFB00734AE0 /* firebase-practice-mock-instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firebase-practice-mock-instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA30E89223846BFB00734AE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EA30E89423846BFB00734AE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EA30E89623846BFB00734AE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA30E89923846BFB00734AE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA30E89C23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = firebase_practice_mock_instagram.xcdatamodel; sourceTree = "<group>"; };
+		EA30E89E23846C0200734AE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA30E8A123846C0200734AE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA30E8A323846C0200734AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA30E8A823846C0200734AE0 /* firebase-practice-mock-instagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "firebase-practice-mock-instagramTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA30E8AC23846C0200734AE0 /* firebase_practice_mock_instagramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebase_practice_mock_instagramTests.swift; sourceTree = "<group>"; };
+		EA30E8AE23846C0200734AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA30E88C23846BFB00734AE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA30E8A523846C0200734AE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA30E88623846BFB00734AE0 = {
+			isa = PBXGroup;
+			children = (
+				EA30E89123846BFB00734AE0 /* firebase-practice-mock-instagram */,
+				EA30E8AB23846C0200734AE0 /* firebase-practice-mock-instagramTests */,
+				EA30E89023846BFB00734AE0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA30E89023846BFB00734AE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E88F23846BFB00734AE0 /* firebase-practice-mock-instagram.app */,
+				EA30E8A823846C0200734AE0 /* firebase-practice-mock-instagramTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA30E89123846BFB00734AE0 /* firebase-practice-mock-instagram */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E89223846BFB00734AE0 /* AppDelegate.swift */,
+				EA30E89423846BFB00734AE0 /* SceneDelegate.swift */,
+				EA30E89623846BFB00734AE0 /* ViewController.swift */,
+				EA30E89823846BFB00734AE0 /* Main.storyboard */,
+				EA30E89E23846C0200734AE0 /* Assets.xcassets */,
+				EA30E8A023846C0200734AE0 /* LaunchScreen.storyboard */,
+				EA30E8A323846C0200734AE0 /* Info.plist */,
+				EA30E89B23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodeld */,
+			);
+			path = "firebase-practice-mock-instagram";
+			sourceTree = "<group>";
+		};
+		EA30E8AB23846C0200734AE0 /* firebase-practice-mock-instagramTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E8AC23846C0200734AE0 /* firebase_practice_mock_instagramTests.swift */,
+				EA30E8AE23846C0200734AE0 /* Info.plist */,
+			);
+			path = "firebase-practice-mock-instagramTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA30E88E23846BFB00734AE0 /* firebase-practice-mock-instagram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA30E8B123846C0200734AE0 /* Build configuration list for PBXNativeTarget "firebase-practice-mock-instagram" */;
+			buildPhases = (
+				EA30E88B23846BFB00734AE0 /* Sources */,
+				EA30E88C23846BFB00734AE0 /* Frameworks */,
+				EA30E88D23846BFB00734AE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "firebase-practice-mock-instagram";
+			productName = "firebase-practice-mock-instagram";
+			productReference = EA30E88F23846BFB00734AE0 /* firebase-practice-mock-instagram.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA30E8A723846C0200734AE0 /* firebase-practice-mock-instagramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA30E8B423846C0200734AE0 /* Build configuration list for PBXNativeTarget "firebase-practice-mock-instagramTests" */;
+			buildPhases = (
+				EA30E8A423846C0200734AE0 /* Sources */,
+				EA30E8A523846C0200734AE0 /* Frameworks */,
+				EA30E8A623846C0200734AE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA30E8AA23846C0200734AE0 /* PBXTargetDependency */,
+			);
+			name = "firebase-practice-mock-instagramTests";
+			productName = "firebase-practice-mock-instagramTests";
+			productReference = EA30E8A823846C0200734AE0 /* firebase-practice-mock-instagramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA30E88723846BFB00734AE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Sunni Tang";
+				TargetAttributes = {
+					EA30E88E23846BFB00734AE0 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					EA30E8A723846C0200734AE0 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = EA30E88E23846BFB00734AE0;
+					};
+				};
+			};
+			buildConfigurationList = EA30E88A23846BFB00734AE0 /* Build configuration list for PBXProject "firebase-practice-mock-instagram" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA30E88623846BFB00734AE0;
+			productRefGroup = EA30E89023846BFB00734AE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA30E88E23846BFB00734AE0 /* firebase-practice-mock-instagram */,
+				EA30E8A723846C0200734AE0 /* firebase-practice-mock-instagramTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA30E88D23846BFB00734AE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA30E8A223846C0200734AE0 /* LaunchScreen.storyboard in Resources */,
+				EA30E89F23846C0200734AE0 /* Assets.xcassets in Resources */,
+				EA30E89A23846BFB00734AE0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA30E8A623846C0200734AE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA30E88B23846BFB00734AE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA30E89723846BFB00734AE0 /* ViewController.swift in Sources */,
+				EA30E89323846BFB00734AE0 /* AppDelegate.swift in Sources */,
+				EA30E89D23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodeld in Sources */,
+				EA30E89523846BFB00734AE0 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA30E8A423846C0200734AE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA30E8AD23846C0200734AE0 /* firebase_practice_mock_instagramTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA30E8AA23846C0200734AE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA30E88E23846BFB00734AE0 /* firebase-practice-mock-instagram */;
+			targetProxy = EA30E8A923846C0200734AE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA30E89823846BFB00734AE0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA30E89923846BFB00734AE0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EA30E8A023846C0200734AE0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA30E8A123846C0200734AE0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA30E8AF23846C0200734AE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EA30E8B023846C0200734AE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA30E8B223846C0200734AE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "firebase-practice-mock-instagram/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Pursuit-6.1.firebase-practice-mock-instagram";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA30E8B323846C0200734AE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "firebase-practice-mock-instagram/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Pursuit-6.1.firebase-practice-mock-instagram";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EA30E8B523846C0200734AE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "firebase-practice-mock-instagramTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Pursuit-6.1.firebase-practice-mock-instagramTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firebase-practice-mock-instagram.app/firebase-practice-mock-instagram";
+			};
+			name = Debug;
+		};
+		EA30E8B623846C0200734AE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "firebase-practice-mock-instagramTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Pursuit-6.1.firebase-practice-mock-instagramTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firebase-practice-mock-instagram.app/firebase-practice-mock-instagram";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA30E88A23846BFB00734AE0 /* Build configuration list for PBXProject "firebase-practice-mock-instagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA30E8AF23846C0200734AE0 /* Debug */,
+				EA30E8B023846C0200734AE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA30E8B123846C0200734AE0 /* Build configuration list for PBXNativeTarget "firebase-practice-mock-instagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA30E8B223846C0200734AE0 /* Debug */,
+				EA30E8B323846C0200734AE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA30E8B423846C0200734AE0 /* Build configuration list for PBXNativeTarget "firebase-practice-mock-instagramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA30E8B523846C0200734AE0 /* Debug */,
+				EA30E8B623846C0200734AE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EA30E89B23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EA30E89C23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodel */,
+			);
+			currentVersion = EA30E89C23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodel */;
+			path = firebase_practice_mock_instagram.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EA30E88723846BFB00734AE0 /* Project object */;
+}
