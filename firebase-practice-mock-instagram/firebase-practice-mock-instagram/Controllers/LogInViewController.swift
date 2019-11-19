@@ -33,6 +33,7 @@ class LogInViewController: UIViewController {
     lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Login", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         return button
     }()
     
@@ -47,6 +48,7 @@ class LogInViewController: UIViewController {
     lazy var createAccountButton: UIButton = {
         let button = UIButton()
         button.setTitle("Create New Account", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         return button
     }()
     
