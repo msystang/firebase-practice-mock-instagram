@@ -10,6 +10,18 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    // MARK: - UI Objects
+    
+    lazy var feedLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    lazy var feedCollectionView: UICollectionView = {
+        let collectionView = UICollectionView()
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
