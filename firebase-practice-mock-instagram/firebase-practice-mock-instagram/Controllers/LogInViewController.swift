@@ -14,34 +14,39 @@ class LogInViewController: UIViewController {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Pursuitgram"
+        label.textAlignment = .center
         return label
     }()
     
     lazy var emailTextField: UITextField = {
         let textfield = UITextField()
+        textfield.borderStyle = .roundedRect
         return textfield
     }()
     
     lazy var passwordTextField: UITextField = {
         let textfield = UITextField()
+        textfield.borderStyle = .roundedRect
         return textfield
     }()
     
     lazy var loginButton: UIButton = {
         let button = UIButton()
+        button.setTitle("Login", for: .normal)
         return button
     }()
     
-    lazy var textFieldStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
+    lazy var logInStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton])
         stackView.alignment = .center
-        stackView.distribution = .fillEqually
+        stackView.distribution = .equalSpacing
         stackView.axis = .vertical
         return stackView
     }()
     
     lazy var createAccountButton: UIButton = {
         let button = UIButton()
+        button.setTitle("Create New Account", for: .normal)
         return button
     }()
     
@@ -54,24 +59,54 @@ class LogInViewController: UIViewController {
     }
     
     func addSubviews() {
+        view.addSubview(logInStackView)
         view.addSubview(titleLabel)
-        view.addSubview(textFieldStackView)
-        view.addSubview(loginButton)
         view.addSubview(createAccountButton)
         
     }
     
     func addConstraints() {
+        setLogInStackViewConstraints()
         setTitleLabelConstraints()
-        setTextFieldStackViewConstraints()
-        setLoginButtonConstraints()
         setCreateAccountButtonConstraints()
     }
     
-    func setTitleLabelConstraints() {}
-    func setTextFieldStackViewConstraints() {}
-    func setLoginButtonConstraints() {}
-    func setCreateAccountButtonConstraints() {}
+    func setLogInStackViewConstraints() {
+        logInStackView.translatesAutoresizingMaskIntoConstraints = false
+        emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            logInStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            logInStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logInStackView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3),
+            emailTextField.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            passwordTextField.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8)
+        ])
+    }
+    
+    func setTitleLabelConstraints() {
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            titleLabel.bottomAnchor.constraint(equalTo: logInStackView.topAnchor, constant: 30),
+            titleLabel.leadingAnchor.constraint(equalTo: logInStackView.leadingAnchor),
+            titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+        ])
+    }
+    
+    func setCreateAccountButtonConstraints() {
+        createAccountButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            createAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            createAccountButton.leadingAnchor.constraint(equalTo: logInStackView.leadingAnchor),
+            createAccountButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -5),
+            createAccountButton.heightAnchor.constraint(equalToConstant: 100)
+        ])
+    }
+    
     
     
 }
