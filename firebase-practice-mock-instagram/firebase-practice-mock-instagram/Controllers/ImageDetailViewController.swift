@@ -10,6 +10,28 @@ import UIKit
 
 class ImageDetailViewController: UIViewController {
 
+    // MARK: - UI Objects
+    
+    lazy var imageDetailLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    lazy var postImageView: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
+    lazy var submittedByLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
