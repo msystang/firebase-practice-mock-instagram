@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		EA30E89323846BFB00734AE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89223846BFB00734AE0 /* AppDelegate.swift */; };
 		EA30E89523846BFB00734AE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89423846BFB00734AE0 /* SceneDelegate.swift */; };
-		EA30E89723846BFB00734AE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89623846BFB00734AE0 /* ViewController.swift */; };
+		EA30E89723846BFB00734AE0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89623846BFB00734AE0 /* LogInViewController.swift */; };
 		EA30E89F23846C0200734AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA30E89E23846C0200734AE0 /* Assets.xcassets */; };
 		EA30E8A223846C0200734AE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA30E8A023846C0200734AE0 /* LaunchScreen.storyboard */; };
 		EA30E8AD23846C0200734AE0 /* firebase_practice_mock_instagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8AC23846C0200734AE0 /* firebase_practice_mock_instagramTests.swift */; };
+		EA30E8B923846DC000734AE0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8B823846DC000734AE0 /* ProfileViewController.swift */; };
+		EA30E8BB23846DCC00734AE0 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8BA23846DCC00734AE0 /* FeedViewController.swift */; };
+		EA30E8BD23846DE500734AE0 /* ImageUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8BC23846DE500734AE0 /* ImageUploadViewController.swift */; };
+		EA30E8BF23846DEC00734AE0 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */; };
+		EA30E8C323846E8300734AE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8C223846E8300734AE0 /* User.swift */; };
+		EA30E8C523846EE000734AE0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8C423846EE000734AE0 /* Post.swift */; };
+		EA30E8C82384703B00734AE0 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8C72384703B00734AE0 /* FeedCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +36,20 @@
 		EA30E88F23846BFB00734AE0 /* firebase-practice-mock-instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firebase-practice-mock-instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA30E89223846BFB00734AE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA30E89423846BFB00734AE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EA30E89623846BFB00734AE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA30E89623846BFB00734AE0 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		EA30E89E23846C0200734AE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA30E8A123846C0200734AE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA30E8A323846C0200734AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA30E8A823846C0200734AE0 /* firebase-practice-mock-instagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "firebase-practice-mock-instagramTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA30E8AC23846C0200734AE0 /* firebase_practice_mock_instagramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebase_practice_mock_instagramTests.swift; sourceTree = "<group>"; };
 		EA30E8AE23846C0200734AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA30E8B823846DC000734AE0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EA30E8BA23846DCC00734AE0 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		EA30E8BC23846DE500734AE0 /* ImageUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadViewController.swift; sourceTree = "<group>"; };
+		EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		EA30E8C223846E8300734AE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EA30E8C423846EE000734AE0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		EA30E8C72384703B00734AE0 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +91,10 @@
 		EA30E89123846BFB00734AE0 /* firebase-practice-mock-instagram */ = {
 			isa = PBXGroup;
 			children = (
-				EA30E89223846BFB00734AE0 /* AppDelegate.swift */,
-				EA30E89423846BFB00734AE0 /* SceneDelegate.swift */,
-				EA30E89623846BFB00734AE0 /* ViewController.swift */,
-				EA30E89E23846C0200734AE0 /* Assets.xcassets */,
-				EA30E8A023846C0200734AE0 /* LaunchScreen.storyboard */,
+				EA30E8C123846E6200734AE0 /* Models */,
+				EA30E8B723846D9400734AE0 /* Controllers */,
+				EA30E8C023846E3800734AE0 /* Views */,
+				EA30E8C623846F1900734AE0 /* Supporting Files */,
 				EA30E8A323846C0200734AE0 /* Info.plist */,
 			);
 			path = "firebase-practice-mock-instagram";
@@ -94,6 +107,46 @@
 				EA30E8AE23846C0200734AE0 /* Info.plist */,
 			);
 			path = "firebase-practice-mock-instagramTests";
+			sourceTree = "<group>";
+		};
+		EA30E8B723846D9400734AE0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E89623846BFB00734AE0 /* LogInViewController.swift */,
+				EA30E8B823846DC000734AE0 /* ProfileViewController.swift */,
+				EA30E8BA23846DCC00734AE0 /* FeedViewController.swift */,
+				EA30E8BC23846DE500734AE0 /* ImageUploadViewController.swift */,
+				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EA30E8C023846E3800734AE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E8C72384703B00734AE0 /* FeedCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA30E8C123846E6200734AE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E8C223846E8300734AE0 /* User.swift */,
+				EA30E8C423846EE000734AE0 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA30E8C623846F1900734AE0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E8A023846C0200734AE0 /* LaunchScreen.storyboard */,
+				EA30E89223846BFB00734AE0 /* AppDelegate.swift */,
+				EA30E89423846BFB00734AE0 /* SceneDelegate.swift */,
+				EA30E89E23846C0200734AE0 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,8 +249,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA30E89723846BFB00734AE0 /* ViewController.swift in Sources */,
+				EA30E89723846BFB00734AE0 /* LogInViewController.swift in Sources */,
 				EA30E89323846BFB00734AE0 /* AppDelegate.swift in Sources */,
+				EA30E8C82384703B00734AE0 /* FeedCollectionViewCell.swift in Sources */,
+				EA30E8BF23846DEC00734AE0 /* ImageDetailViewController.swift in Sources */,
+				EA30E8BB23846DCC00734AE0 /* FeedViewController.swift in Sources */,
+				EA30E8C323846E8300734AE0 /* User.swift in Sources */,
+				EA30E8BD23846DE500734AE0 /* ImageUploadViewController.swift in Sources */,
+				EA30E8C523846EE000734AE0 /* Post.swift in Sources */,
+				EA30E8B923846DC000734AE0 /* ProfileViewController.swift in Sources */,
 				EA30E89523846BFB00734AE0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
