@@ -9,12 +9,38 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-
+    
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Pursuitgram"
+        return label
+    }()
+    
+    lazy var mailTextField: UITextField = {
+        let textfield = UITextField()
+        return textfield
+    }()
+    
+    lazy var passwordTextField: UITextField = {
+        let textfield = UITextField()
+        return textfield
+    }()
+    
+    lazy var loginButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
+    lazy var createAccountButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
 }
 
