@@ -17,7 +17,7 @@ class LogInViewController: UIViewController {
         return label
     }()
     
-    lazy var mailTextField: UITextField = {
+    lazy var emailTextField: UITextField = {
         let textfield = UITextField()
         return textfield
     }()
@@ -32,6 +32,14 @@ class LogInViewController: UIViewController {
         return button
     }()
     
+    lazy var textFieldStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        stackView.axis = .vertical
+        return stackView
+    }()
+    
     lazy var createAccountButton: UIButton = {
         let button = UIButton()
         return button
@@ -39,8 +47,31 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
+        addSubviews()
+        addConstraints()
+        
     }
+    
+    func addSubviews() {
+        view.addSubview(titleLabel)
+        view.addSubview(textFieldStackView)
+        view.addSubview(loginButton)
+        view.addSubview(createAccountButton)
+        
+    }
+    
+    func addConstraints() {
+        setTitleLabelConstraints()
+        setTextFieldStackViewConstraints()
+        setLoginButtonConstraints()
+        setCreateAccountButtonConstraints()
+    }
+    
+    func setTitleLabelConstraints() {}
+    func setTextFieldStackViewConstraints() {}
+    func setLoginButtonConstraints() {}
+    func setCreateAccountButtonConstraints() {}
     
     
 }
