@@ -10,6 +10,28 @@ import UIKit
 
 class ImageUploadViewController: UIViewController {
 
+    // MARK: - UI Objects
+    
+    lazy var uploadImageLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    lazy var imageToUploadImageView: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
+    lazy var uploadButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
+    lazy var cancelButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
