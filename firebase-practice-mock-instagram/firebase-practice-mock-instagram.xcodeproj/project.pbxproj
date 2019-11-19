@@ -10,8 +10,6 @@
 		EA30E89323846BFB00734AE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89223846BFB00734AE0 /* AppDelegate.swift */; };
 		EA30E89523846BFB00734AE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89423846BFB00734AE0 /* SceneDelegate.swift */; };
 		EA30E89723846BFB00734AE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89623846BFB00734AE0 /* ViewController.swift */; };
-		EA30E89A23846BFB00734AE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA30E89823846BFB00734AE0 /* Main.storyboard */; };
-		EA30E89D23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA30E89B23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodeld */; };
 		EA30E89F23846C0200734AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA30E89E23846C0200734AE0 /* Assets.xcassets */; };
 		EA30E8A223846C0200734AE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA30E8A023846C0200734AE0 /* LaunchScreen.storyboard */; };
 		EA30E8AD23846C0200734AE0 /* firebase_practice_mock_instagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8AC23846C0200734AE0 /* firebase_practice_mock_instagramTests.swift */; };
@@ -32,8 +30,6 @@
 		EA30E89223846BFB00734AE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA30E89423846BFB00734AE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EA30E89623846BFB00734AE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EA30E89923846BFB00734AE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EA30E89C23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = firebase_practice_mock_instagram.xcdatamodel; sourceTree = "<group>"; };
 		EA30E89E23846C0200734AE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA30E8A123846C0200734AE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA30E8A323846C0200734AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,11 +80,9 @@
 				EA30E89223846BFB00734AE0 /* AppDelegate.swift */,
 				EA30E89423846BFB00734AE0 /* SceneDelegate.swift */,
 				EA30E89623846BFB00734AE0 /* ViewController.swift */,
-				EA30E89823846BFB00734AE0 /* Main.storyboard */,
 				EA30E89E23846C0200734AE0 /* Assets.xcassets */,
 				EA30E8A023846C0200734AE0 /* LaunchScreen.storyboard */,
 				EA30E8A323846C0200734AE0 /* Info.plist */,
-				EA30E89B23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodeld */,
 			);
 			path = "firebase-practice-mock-instagram";
 			sourceTree = "<group>";
@@ -185,7 +179,6 @@
 			files = (
 				EA30E8A223846C0200734AE0 /* LaunchScreen.storyboard in Resources */,
 				EA30E89F23846C0200734AE0 /* Assets.xcassets in Resources */,
-				EA30E89A23846BFB00734AE0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +198,6 @@
 			files = (
 				EA30E89723846BFB00734AE0 /* ViewController.swift in Sources */,
 				EA30E89323846BFB00734AE0 /* AppDelegate.swift in Sources */,
-				EA30E89D23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodeld in Sources */,
 				EA30E89523846BFB00734AE0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,14 +221,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EA30E89823846BFB00734AE0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA30E89923846BFB00734AE0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EA30E8A023846C0200734AE0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -469,19 +453,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		EA30E89B23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				EA30E89C23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodel */,
-			);
-			currentVersion = EA30E89C23846BFB00734AE0 /* firebase_practice_mock_instagram.xcdatamodel */;
-			path = firebase_practice_mock_instagram.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = EA30E88723846BFB00734AE0 /* Project object */;
 }
