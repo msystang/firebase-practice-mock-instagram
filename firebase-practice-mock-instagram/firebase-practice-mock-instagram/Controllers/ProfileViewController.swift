@@ -9,7 +9,38 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
+    // MARK: - UI Objects
+    lazy var profileLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    lazy var profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
+    lazy var displayNameLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    lazy var editButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
+    lazy var emailLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    lazy var postCountLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

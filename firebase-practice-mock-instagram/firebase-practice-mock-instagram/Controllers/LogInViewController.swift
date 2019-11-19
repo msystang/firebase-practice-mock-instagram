@@ -10,6 +10,7 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    // MARK: - UI Objects
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Pursuitgram"
