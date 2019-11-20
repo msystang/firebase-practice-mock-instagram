@@ -21,6 +21,7 @@ class SignUpViewController: UIViewController {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "Enter Email"
+        textField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         return textField
     }()
     
@@ -28,6 +29,7 @@ class SignUpViewController: UIViewController {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "Enter Password"
+        textField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         return textField
     }()
     
@@ -54,6 +56,18 @@ class SignUpViewController: UIViewController {
     }
     
 
+    //MARK: -Obj-C Methods
+    
+    @objc func validateFields() {
+        guard emailTextField.hasText, passwordTextField.hasText else {
+            //TODO: Change color of button when enabled/disabled
+            createButton.isEnabled = false
+            return
+        }
+        createButton.isEnabled = true
+    }
+    
+    // MARK: - Constraint Methods
     func addSubviews() {
         view.addSubview(headerLabel)
         view.addSubview(createAccountStackView)
