@@ -149,12 +149,9 @@
 		EA30E8B723846D9400734AE0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EA30E89623846BFB00734AE0 /* LogInViewController.swift */,
-				EA30E8B823846DC000734AE0 /* ProfileViewController.swift */,
-				EA30E8CF2385EF7800734AE0 /* SignUpViewController.swift */,
-				EA30E8BA23846DCC00734AE0 /* FeedViewController.swift */,
-				EA30E8BC23846DE500734AE0 /* ImageUploadViewController.swift */,
-				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
+				EA30E8D12385EF9600734AE0 /* Authentication */,
+				EA30E8D22385EFBD00734AE0 /* User */,
+				EA30E8D32385EFC500734AE0 /* Feed */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +182,33 @@
 				EA30E89E23846C0200734AE0 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA30E8D12385EF9600734AE0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E89623846BFB00734AE0 /* LogInViewController.swift */,
+				EA30E8CF2385EF7800734AE0 /* SignUpViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		EA30E8D22385EFBD00734AE0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E8B823846DC000734AE0 /* ProfileViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		EA30E8D32385EFC500734AE0 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E8BA23846DCC00734AE0 /* FeedViewController.swift */,
+				EA30E8BC23846DE500734AE0 /* ImageUploadViewController.swift */,
+				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
