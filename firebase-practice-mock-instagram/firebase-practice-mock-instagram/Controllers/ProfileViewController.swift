@@ -40,24 +40,14 @@ class ProfileViewController: UIViewController {
         return button
     }()
     
-    lazy var emailLabel: UILabel = {
+    lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.text = "email"
+        label.text = """
+                    email
+                    postCount
+                    """
+        label.numberOfLines = 0
         return label
-    }()
-    
-    lazy var postCountLabel: UILabel = {
-        let label = UILabel()
-        label.text = "postCount"
-        return label
-    }()
-    
-    lazy var labelStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [emailLabel, postCountLabel])
-        stackView.alignment = .top
-        stackView.distribution = .fillProportionally
-        stackView.axis = .vertical
-        return stackView
     }()
     
     override func viewDidLoad() {
@@ -72,7 +62,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(profileImageView)
         view.addSubview(displayNameLabel)
         view.addSubview(editNameButton)
-        view.addSubview(labelStackView)
+        view.addSubview(infoLabel)
         
     }
     
@@ -81,7 +71,7 @@ class ProfileViewController: UIViewController {
         setProfileImageConstraints()
         setDisplayNameConstraints()
         setEditButtonConstraints()
-        setLabelStackViewConstraints()
+        setInfoLabelConstraints()
         
     }
     
@@ -130,14 +120,14 @@ class ProfileViewController: UIViewController {
         ])
     }
     
-    func setLabelStackViewConstraints() {
-        labelStackView.translatesAutoresizingMaskIntoConstraints = false
+    func setInfoLabelConstraints() {
+        infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            labelStackView.topAnchor.constraint(equalTo: editNameButton.bottomAnchor, constant: 20),
-            labelStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            labelStackView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            labelStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+            infoLabel.topAnchor.constraint(equalTo: editNameButton.bottomAnchor, constant: 20),
+            infoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            infoLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            infoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
     
