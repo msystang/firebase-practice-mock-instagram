@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let tabBarController = UITabBarController()
 //        tabBarController.viewControllers = [profileVC, feedVC, navigationController]
 //
-        window?.rootViewController = ProfileViewController()
+        window?.rootViewController = SignUpViewController()
 //        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         

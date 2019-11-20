@@ -19,15 +19,15 @@ class LogInViewController: UIViewController {
     }()
     
     lazy var emailTextField: UITextField = {
-        let textfield = UITextField()
-        textfield.borderStyle = .roundedRect
-        return textfield
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        return textField
     }()
     
     lazy var passwordTextField: UITextField = {
-        let textfield = UITextField()
-        textfield.borderStyle = .roundedRect
-        return textfield
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        return textField
     }()
     
     lazy var loginButton: UIButton = {
