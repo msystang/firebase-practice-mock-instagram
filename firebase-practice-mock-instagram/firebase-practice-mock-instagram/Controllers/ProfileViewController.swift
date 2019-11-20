@@ -50,6 +50,12 @@ class ProfileViewController: UIViewController {
         return label
     }()
     
+    lazy var editPhotoButton: UIButton = {
+        let button = UIButton()
+        button.setImage(.add, for: .normal)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
@@ -63,6 +69,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(displayNameLabel)
         view.addSubview(editNameButton)
         view.addSubview(infoLabel)
+        profileImageView.addSubview(editPhotoButton)
         
     }
     
@@ -72,6 +79,7 @@ class ProfileViewController: UIViewController {
         setDisplayNameConstraints()
         setEditButtonConstraints()
         setInfoLabelConstraints()
+        setEditPhotoButtonConstraints()
         
     }
     
@@ -128,6 +136,17 @@ class ProfileViewController: UIViewController {
             infoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             infoLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
             infoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        ])
+    }
+    
+    func setEditPhotoButtonConstraints() {
+        editPhotoButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            editPhotoButton.topAnchor.constraint(equalTo: profileImageView.topAnchor),
+            editPhotoButton.trailingAnchor.constraint(equalTo: profileImageView.trailingAnchor),
+            editPhotoButton.heightAnchor.constraint(equalToConstant: 50),
+            editPhotoButton.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
     
