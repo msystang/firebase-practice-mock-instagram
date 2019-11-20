@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		EA30E8C523846EE000734AE0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8C423846EE000734AE0 /* Post.swift */; };
 		EA30E8C82384703B00734AE0 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8C72384703B00734AE0 /* FeedCollectionViewCell.swift */; };
 		EA30E8CE2384894200734AE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA30E8CD2384894200734AE0 /* GoogleService-Info.plist */; };
+		EA30E8D02385EF7800734AE0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30E8CF2385EF7800734AE0 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		EA30E8C423846EE000734AE0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		EA30E8C72384703B00734AE0 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA30E8CD2384894200734AE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA30E8CF2385EF7800734AE0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F05052A10CC6B2FF9F5CA026 /* Pods-firebase-practice-mock-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-practice-mock-instagram.release.xcconfig"; path = "Target Support Files/Pods-firebase-practice-mock-instagram/Pods-firebase-practice-mock-instagram.release.xcconfig"; sourceTree = "<group>"; };
 		F5BA91300F8B124F1EE66D6E /* Pods-firebase-practice-mock-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-practice-mock-instagramTests.debug.xcconfig"; path = "Target Support Files/Pods-firebase-practice-mock-instagramTests/Pods-firebase-practice-mock-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +92,6 @@
 				F5BA91300F8B124F1EE66D6E /* Pods-firebase-practice-mock-instagramTests.debug.xcconfig */,
 				A74F2BA8D98CDDB4694DAF50 /* Pods-firebase-practice-mock-instagramTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -150,6 +151,7 @@
 			children = (
 				EA30E89623846BFB00734AE0 /* LogInViewController.swift */,
 				EA30E8B823846DC000734AE0 /* ProfileViewController.swift */,
+				EA30E8CF2385EF7800734AE0 /* SignUpViewController.swift */,
 				EA30E8BA23846DCC00734AE0 /* FeedViewController.swift */,
 				EA30E8BC23846DE500734AE0 /* ImageUploadViewController.swift */,
 				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
@@ -353,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA30E8D02385EF7800734AE0 /* SignUpViewController.swift in Sources */,
 				EA30E89723846BFB00734AE0 /* LogInViewController.swift in Sources */,
 				EA30E89323846BFB00734AE0 /* AppDelegate.swift in Sources */,
 				EA30E8C82384703B00734AE0 /* FeedCollectionViewCell.swift in Sources */,

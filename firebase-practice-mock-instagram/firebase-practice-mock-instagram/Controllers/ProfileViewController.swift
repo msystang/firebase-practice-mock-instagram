@@ -12,7 +12,6 @@ class ProfileViewController: UIViewController {
     
     // MARK: - UI Objects
     
-    //TODO: Add edit profile pic image
     lazy var profileLabel: UILabel = {
         let label = UILabel()
         label.text = "Profile"
