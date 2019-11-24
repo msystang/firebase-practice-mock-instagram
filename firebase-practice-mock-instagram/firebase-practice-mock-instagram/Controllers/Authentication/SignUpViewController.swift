@@ -60,12 +60,13 @@ class SignUpViewController: UIViewController {
     
     @objc func validateFields() {
         guard emailTextField.hasText, passwordTextField.hasText else {
-            //TODO: Change color of button when enabled/disabled
+            //TODO: Change color of button when enabled/disabled 
             createButton.isEnabled = false
             return
         }
         createButton.isEnabled = true
     }
+    
     
     // MARK: - Constraint Methods
     func addSubviews() {
