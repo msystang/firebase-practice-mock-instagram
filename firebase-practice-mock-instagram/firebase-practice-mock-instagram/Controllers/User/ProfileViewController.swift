@@ -22,6 +22,9 @@ class ProfileViewController: UIViewController {
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .yellow
+        //TODO: Figure out why corners are not rounding
+        imageView.layer.cornerRadius = imageView.frame.height / 2
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -32,7 +35,7 @@ class ProfileViewController: UIViewController {
         return label
     }()
     
-    lazy var editNameButton: UIButton = {
+    lazy var editDisplayNameButton: UIButton = {
         let button = UIButton()
         button.setTitle("Edit", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -55,6 +58,7 @@ class ProfileViewController: UIViewController {
         return button
     }()
     
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
@@ -62,13 +66,14 @@ class ProfileViewController: UIViewController {
         addConstraints()
     }
     
+    //MARK: - UI Constraint Methods
     func addSubviews() {
         view.addSubview(profileLabel)
         view.addSubview(profileImageView)
         view.addSubview(displayNameLabel)
-        view.addSubview(editNameButton)
+        view.addSubview(editDisplayNameButton)
         view.addSubview(infoLabel)
-        profileImageView.addSubview(editPhotoButton)
+        view.addSubview(editPhotoButton)
         
     }
     
@@ -76,7 +81,7 @@ class ProfileViewController: UIViewController {
         setProfileLabelConstraints()
         setProfileImageConstraints()
         setDisplayNameConstraints()
-        setEditButtonConstraints()
+        setEditDisplayNameButtonConstraints()
         setInfoLabelConstraints()
         setEditPhotoButtonConstraints()
         
@@ -96,7 +101,7 @@ class ProfileViewController: UIViewController {
     
     func setProfileImageConstraints() {
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             profileImageView.topAnchor.constraint(equalTo: profileLabel.bottomAnchor, constant: 20),
             profileImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
@@ -116,14 +121,14 @@ class ProfileViewController: UIViewController {
         ])
     }
     
-    func setEditButtonConstraints() {
-        editNameButton.translatesAutoresizingMaskIntoConstraints = false
+    func setEditDisplayNameButtonConstraints() {
+        editDisplayNameButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            editNameButton.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 5),
-            editNameButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            editNameButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            editNameButton.heightAnchor.constraint(equalToConstant: 20)
+            editDisplayNameButton.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 5),
+            editDisplayNameButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            editDisplayNameButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            editDisplayNameButton.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
@@ -131,7 +136,7 @@ class ProfileViewController: UIViewController {
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            infoLabel.topAnchor.constraint(equalTo: editNameButton.bottomAnchor, constant: 20),
+            infoLabel.topAnchor.constraint(equalTo: editDisplayNameButton.bottomAnchor, constant: 20),
             infoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             infoLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
             infoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
@@ -142,10 +147,10 @@ class ProfileViewController: UIViewController {
         editPhotoButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            editPhotoButton.topAnchor.constraint(equalTo: profileImageView.topAnchor),
-            editPhotoButton.trailingAnchor.constraint(equalTo: profileImageView.trailingAnchor),
-            editPhotoButton.heightAnchor.constraint(equalToConstant: 50),
-            editPhotoButton.widthAnchor.constraint(equalToConstant: 50)
+            editPhotoButton.centerXAnchor.constraint(equalTo: profileImageView.trailingAnchor),
+            editPhotoButton.centerYAnchor.constraint(equalTo: profileImageView.topAnchor),
+            editPhotoButton.heightAnchor.constraint(equalToConstant: 100),
+            editPhotoButton.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
     
