@@ -56,7 +56,7 @@ class SignUpViewController: UIViewController {
     }
     
 
-    //MARK: -Obj-C Methods
+    //MARK: - Obj-C Methods
     
     @objc func validateFields() {
         guard emailTextField.hasText, passwordTextField.hasText else {
@@ -67,6 +67,13 @@ class SignUpViewController: UIViewController {
         createButton.isEnabled = true
     }
     
+    //MARK: - Private Methods
+    
+    private func showAlert(with title: String, and message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
     
     // MARK: - Constraint Methods
     func addSubviews() {
