@@ -67,6 +67,8 @@ class SignUpViewController: UIViewController {
         createButton.isEnabled = true
     }
     
+    
+    
     //MARK: - Private Methods
     
     private func showAlert(with title: String, and message: String) {

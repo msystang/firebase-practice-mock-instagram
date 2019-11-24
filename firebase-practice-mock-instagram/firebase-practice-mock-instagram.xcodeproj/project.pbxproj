@@ -132,6 +132,7 @@
 				EA30E8C123846E6200734AE0 /* Models */,
 				EA30E8B723846D9400734AE0 /* Controllers */,
 				EA30E8C023846E3800734AE0 /* Views */,
+				EA30E8DE238A43CA00734AE0 /* Utilities */,
 				EA30E8C623846F1900734AE0 /* Supporting Files */,
 				EA30E8A323846C0200734AE0 /* Info.plist */,
 				EA30E8CD2384894200734AE0 /* GoogleService-Info.plist */,
@@ -182,7 +183,6 @@
 				EA30E89223846BFB00734AE0 /* AppDelegate.swift */,
 				EA30E89423846BFB00734AE0 /* SceneDelegate.swift */,
 				EA30E89E23846C0200734AE0 /* Assets.xcassets */,
-				EA30E8DB238A430E00734AE0 /* String+Validation.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -212,6 +212,30 @@
 				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		EA30E8DD238A43B600734AE0 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		EA30E8DE238A43CA00734AE0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E8DF238A43E400734AE0 /* Extensions */,
+				EA30E8DD238A43B600734AE0 /* Firebase */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EA30E8DF238A43E400734AE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E8DB238A430E00734AE0 /* String+Validation.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
