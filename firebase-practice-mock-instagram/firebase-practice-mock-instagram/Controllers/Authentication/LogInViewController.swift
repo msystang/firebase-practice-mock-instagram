@@ -27,6 +27,7 @@ class LogInViewController: UIViewController {
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -49,6 +50,7 @@ class LogInViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Create New Account", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(createAccountButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -58,6 +60,12 @@ class LogInViewController: UIViewController {
         addSubviews()
         addConstraints()
         
+    }
+    
+    @objc func createAccountButtonPressed() {
+        let signupVC = SignUpViewController()
+        signupVC.modalPresentationStyle = .formSheet
+        present(signupVC, animated: true, completion: nil)
     }
     
     func addSubviews() {
