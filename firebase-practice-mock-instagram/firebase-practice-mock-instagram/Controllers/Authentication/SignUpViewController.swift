@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
@@ -29,6 +30,7 @@ class SignUpViewController: UIViewController {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "Enter Password"
+        textField.isSecureTextEntry = true
         textField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         return textField
     }()
@@ -36,6 +38,7 @@ class SignUpViewController: UIViewController {
     lazy var createButton: UIButton = {
         let button = UIButton()
         button.setTitle("Create", for: .normal)
+        button.addTarget(self, action: #selector(trySignUp), for: .touchUpInside)
         button.setTitleColor(.black, for: .normal)
         return button
     }()
@@ -67,6 +70,26 @@ class SignUpViewController: UIViewController {
         createButton.isEnabled = true
     }
     
+    @objc func trySignUp() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            showAlert(with: "Error", and: "Please fill out all fields.")
+            return
+        }
+        
+        guard email.isValidEmail else {
+            showAlert(with: "Error", and: "Please enter a valid email")
+            return
+        }
+        
+        guard password.isValidPassword else {
+            showAlert(with: "Error", and: "Please enter a valid password. Passwords must have at least 8 characters.")
+            return
+        }
+        
+        FirebaseAuthService.manager.createNewUser(email: email.lowercased(), password: password) { [weak self] (result) in
+            self?.handleCreateAccountResponse(with: result)
+        }
+    }
     
     
     //MARK: - Private Methods
@@ -76,6 +99,37 @@ class SignUpViewController: UIViewController {
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
+    
+    private func handleCreateAccountResponse(with result: Result<User, Error>) {
+            switch result {
+            case .success(let user):
+                FirestoreService.manager.createAppUser(user: AppUser(from: user)) { [weak self] newResult in
+                    self?.handleCreatedUserInFirestore(result: newResult)
+                }
+            case .failure(let error):
+                self.showAlert(with: "Error creating user", and: "An error occured while creating new account \(error)")
+        }
+    }
+    
+    private func handleCreatedUserInFirestore(result: Result<(), Error>) {
+        switch result {
+        case .success:
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+                else {
+                    //MARK: TODO - handle could not swap root view controller
+                    return
+            }
+            
+            //MARK: TODO - refactor this logic into scene delegate
+            UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+                    window.rootViewController = AppTabBarViewController()
+            }, completion: nil)
+        case .failure(let error):
+            self.showAlert(with: "Error creating user", and: "An error occured while creating new account \(error)")
+        }
+    }
+
     
     // MARK: - Constraint Methods
     func addSubviews() {
