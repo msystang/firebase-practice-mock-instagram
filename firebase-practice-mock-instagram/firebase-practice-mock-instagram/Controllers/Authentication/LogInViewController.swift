@@ -61,7 +61,6 @@ class LogInViewController: UIViewController {
         self.view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
         addSubviews()
         addConstraints()
-        
     }
     
     //MARK: - Objc Functions
@@ -124,6 +123,7 @@ class LogInViewController: UIViewController {
                     window.rootViewController = {
                         let profileVC = AppTabBarViewController()
                         profileVC.selectedIndex = 2
+                        //TODO: Set bool property to indicate profile completion, add alert if profile is not completed
                         return profileVC
                     }()
                 }
@@ -136,7 +136,6 @@ class LogInViewController: UIViewController {
         view.addSubview(logInStackView)
         view.addSubview(titleLabel)
         view.addSubview(createAccountButton)
-        
     }
     
     func addConstraints() {
@@ -180,8 +179,5 @@ class LogInViewController: UIViewController {
             createAccountButton.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
-    
-    
-    
 }
 
