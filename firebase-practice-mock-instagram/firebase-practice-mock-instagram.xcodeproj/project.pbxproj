@@ -166,8 +166,9 @@
 			children = (
 				EA5AFF61238AF63800ABF7A8 /* AppTabBarViewController.swift */,
 				EA30E8D12385EF9600734AE0 /* Authentication */,
-				EA30E8D22385EFBD00734AE0 /* User */,
 				EA30E8D32385EFC500734AE0 /* Feed */,
+				EAFA9702238C2DA70008F7B2 /* Post */,
+				EA30E8D22385EFBD00734AE0 /* User */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,8 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				EA30E8BA23846DCC00734AE0 /* FeedViewController.swift */,
-				EA30E8BC23846DE500734AE0 /* ImageUploadViewController.swift */,
-				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -254,6 +253,15 @@
 				EA30E8DB238A430E00734AE0 /* String+Validation.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EAFA9702238C2DA70008F7B2 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E8BC23846DE500734AE0 /* ImageUploadViewController.swift */,
+				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
