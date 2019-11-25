@@ -57,7 +57,7 @@ class ImageDetailViewController: UIViewController {
 
     //MARK: - Private Methods
     private func getDate() {
-        if let date = post.dateCreated?.description {
+        if let date = post.formattedDate {
             dateCreated = date
         } else {
             dateCreated = "Cannot get date."

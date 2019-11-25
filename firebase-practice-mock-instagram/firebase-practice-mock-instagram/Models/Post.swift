@@ -15,6 +15,18 @@ struct Post {
     let photoURL: String?
     let dateCreated: Date?
     
+    var formattedDate: String? {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ssZ"
+
+        let dateFormatterSet = DateFormatter()
+        dateFormatterSet.dateFormat = "MMM d yyyy, h:mm a"
+        
+        guard let dateStr = dateCreated?.description else { return "N/A" }
+        guard let unformattedDate = dateFormatterGet.date(from: dateStr) else { return "N/A" }
+        return dateFormatterSet.string(from: unformattedDate)
+    }
+    
     init(creatorID: String, photoURL: String? = nil, dateCreated: Date? = nil) {
         self.id = UUID().description
         self.creatorID = creatorID
