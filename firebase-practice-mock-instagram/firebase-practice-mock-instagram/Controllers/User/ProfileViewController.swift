@@ -59,12 +59,6 @@ class ProfileViewController: UIViewController {
     }()
     
     //MARK: - Internal Properties
-    var profileImage = UIImage() {
-        didSet {
-            self.profileImageView.image = profileImage
-        }
-    }
-    
     var profileImageURL: URL? = nil
     
     var email = String()
@@ -175,7 +169,6 @@ class ProfileViewController: UIViewController {
     
     }
     
-    //TODO: Figure out why photoURL is nil when there is a urlStr in firebase
     private func getProfileImage() {
         if let profileImageUrlFromFB = FirebaseAuthService.manager.currentUser?.photoURL {
             FirebaseStorageService.profileImageManager.getImage(photoUrl: profileImageUrlFromFB) { (result) in
@@ -184,6 +177,7 @@ class ProfileViewController: UIViewController {
                     print(error)
                     //TODO: showAlert - could not update photo
                 case .success(let image):
+                    //TODO: Add activity indicator
                     self.profileImageView.image = image
                 }
             }
