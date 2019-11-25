@@ -9,7 +9,7 @@
 import UIKit
 
 class ImageUploadViewController: UIViewController {
-
+    
     // MARK: - UI Objects
     
     lazy var uploadImageLabel: UILabel = {

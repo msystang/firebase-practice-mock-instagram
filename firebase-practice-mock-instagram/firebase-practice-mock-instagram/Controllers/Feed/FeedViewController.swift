@@ -12,31 +12,45 @@ class FeedViewController: UIViewController {
 
     // MARK: - UI Objects
     
-    lazy var feedLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
     lazy var feedCollectionView: UICollectionView = {
-        let collectionView = UICollectionView()
+        let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.backgroundColor = .clear
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(FeedCollectionViewCell.self, forCellWithReuseIdentifier: "feedCell")
         return collectionView
     }()
+    
+    var posts = [Post]() {
+        didSet {
+            feedCollectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        addSubviews()
+        addConstraints()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        getPostsFromFirestore()
     }
-    */
 
+    func getPostsFromFirestore() {
+        FirestoreService.manager.getAllPosts(sortingCriteria: .fromNewestToOldest) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let postsFromFirestore):
+                self.posts = postsFromFirestore
+            }
+        }
+    }
+    
 }
+
+

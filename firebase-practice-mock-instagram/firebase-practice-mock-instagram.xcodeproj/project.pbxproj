@@ -33,6 +33,8 @@
 		EAFA9701238B6EC50008F7B2 /* ProfileViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA9700238B6EC50008F7B2 /* ProfileViewController+Constraints.swift */; };
 		EAFA9704238C34960008F7B2 /* ImageUploadViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA9703238C34960008F7B2 /* ImageUploadViewController+Constraints.swift */; };
 		EAFA9706238C42240008F7B2 /* ImageUploadViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA9705238C42240008F7B2 /* ImageUploadViewController+ImagePicker.swift */; };
+		EAFA9708238C4A530008F7B2 /* FeedViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA9707238C4A530008F7B2 /* FeedViewController+Constraints.swift */; };
+		EAFA970A238C4B2A0008F7B2 /* FeedViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA9709238C4B2A0008F7B2 /* FeedViewController+CollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		EAFA9700238B6EC50008F7B2 /* ProfileViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Constraints.swift"; sourceTree = "<group>"; };
 		EAFA9703238C34960008F7B2 /* ImageUploadViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageUploadViewController+Constraints.swift"; sourceTree = "<group>"; };
 		EAFA9705238C42240008F7B2 /* ImageUploadViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageUploadViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		EAFA9707238C4A530008F7B2 /* FeedViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+Constraints.swift"; sourceTree = "<group>"; };
+		EAFA9709238C4B2A0008F7B2 /* FeedViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		F05052A10CC6B2FF9F5CA026 /* Pods-firebase-practice-mock-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-practice-mock-instagram.release.xcconfig"; path = "Target Support Files/Pods-firebase-practice-mock-instagram/Pods-firebase-practice-mock-instagram.release.xcconfig"; sourceTree = "<group>"; };
 		F5BA91300F8B124F1EE66D6E /* Pods-firebase-practice-mock-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-practice-mock-instagramTests.debug.xcconfig"; path = "Target Support Files/Pods-firebase-practice-mock-instagramTests/Pods-firebase-practice-mock-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				EA30E8BA23846DCC00734AE0 /* FeedViewController.swift */,
+				EAFA9709238C4B2A0008F7B2 /* FeedViewController+CollectionView.swift */,
+				EAFA9707238C4A530008F7B2 /* FeedViewController+Constraints.swift */,
 				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
 			);
 			path = Feed;
@@ -447,8 +453,10 @@
 				EAFA96FD238B59220008F7B2 /* FirebaseStorageService.swift in Sources */,
 				EA30E8C82384703B00734AE0 /* FeedCollectionViewCell.swift in Sources */,
 				EA30E8BF23846DEC00734AE0 /* ImageDetailViewController.swift in Sources */,
+				EAFA970A238C4B2A0008F7B2 /* FeedViewController+CollectionView.swift in Sources */,
 				EA30E8BB23846DCC00734AE0 /* FeedViewController.swift in Sources */,
 				EA5AFF60238AF2BA00ABF7A8 /* FirestoreService.swift in Sources */,
+				EAFA9708238C4A530008F7B2 /* FeedViewController+Constraints.swift in Sources */,
 				EA30E8C323846E8300734AE0 /* AppUser.swift in Sources */,
 				EA30E8BD23846DE500734AE0 /* ImageUploadViewController.swift in Sources */,
 				EAFA9706238C42240008F7B2 /* ImageUploadViewController+ImagePicker.swift in Sources */,
