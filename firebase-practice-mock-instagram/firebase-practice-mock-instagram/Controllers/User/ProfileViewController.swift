@@ -170,7 +170,7 @@ class ProfileViewController: UIViewController {
     
     private func getProfileImage() {
         if let profileImageUrlFromFB = FirebaseAuthService.manager.currentUser?.photoURL {
-            FirebaseStorageService.profileImageManager.getImage(photoUrl: profileImageUrlFromFB) { (result) in
+            FirebaseStorageService.profileImageManager.getImage(photoUrl: profileImageUrlFromFB, photoUrlStr: nil) { (result) in
                 switch result {
                 case .failure(let error):
                     print(error)
