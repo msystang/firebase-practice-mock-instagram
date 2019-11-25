@@ -49,7 +49,7 @@ class ProfileViewController: UIViewController {
         return label
     }()
     
-    lazy var editPhotoButton: UIButton = {
+    lazy var editProfileImageButton: UIButton = {
         let button = UIButton()
         button.setImage(.add, for: .normal)
         return button
@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    var profileImageURL: String? = nil
+//    var profileImageURL: String? = nil
     
     var email = String()
     
@@ -124,7 +124,18 @@ class ProfileViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    @objc func editProfileImageButtonPressed() {
+        
+        
+    }
     //MARK: - Private Methods
+    
+    private func getUserInfo() {
+        getEmail()
+        getPostCount()
+        getDisplayName()
+        getProfileImage()
+    }
     
     private func getEmail() {
         if let email = FirebaseAuthService.manager.currentUser?.email {
@@ -148,6 +159,39 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    private func getDisplayName() {
+        if let displayName = FirebaseAuthService.manager.currentUser?.displayName {
+            self.displayNameLabel.text = displayName
+        } else {
+            self.displayNameLabel.text = "No display name set"
+        }
+    
+    }
+    
+    private func getProfileImage() {
+        if let profileImageUrl = FirebaseAuthService.manager.currentUser?.photoURL {
+        // TODO: Firebase Storage
+            FirebaseStorageService.profileImageManager.getImage(photoUrl: profileImageUrl) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                    //TODO: showAlert - could not update photo
+                case .success(let image):
+                    self.profileImageView.image = image
+                }
+            }
+        } else {
+            profileImageView.image = UIImage(named: "no-profile-image")
+        }
+    }
+    
+    private func updateInfoLabel() {
+        infoLabel.text = """
+        Email: \(email)
+        Total posts: \(postCount)
+        """
+    }
+    
     private func updateDisplayNameInFirestore(newDisplayName: String) {
         FirestoreService.manager.updateCurrentUser(displayName: newDisplayName, photoURL: nil) { (result) in
             switch result {
@@ -159,28 +203,6 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    private func getDisplayName() {
-        if let displayName = FirebaseAuthService.manager.currentUser?.displayName {
-            self.displayNameLabel.text = displayName
-        } else {
-            self.displayNameLabel.text = "No display name set"
-        }
-    
-    }
-    
-    private func getUserInfo() {
-        getEmail()
-        getPostCount()
-        getDisplayName()
-    }
-    
-    private func updateInfoLabel() {
-        infoLabel.text = """
-        Email: \(email)
-        Total posts: \(postCount)
-        """
-    }
-    
     
     //MARK: - UI Constraint Methods
     func addSubviews() {
@@ -189,7 +211,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(displayNameLabel)
         view.addSubview(editDisplayNameButton)
         view.addSubview(infoLabel)
-        view.addSubview(editPhotoButton)
+        view.addSubview(editProfileImageButton)
         
     }
     
@@ -260,13 +282,13 @@ class ProfileViewController: UIViewController {
     }
     
     func setEditPhotoButtonConstraints() {
-        editPhotoButton.translatesAutoresizingMaskIntoConstraints = false
+        editProfileImageButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            editPhotoButton.centerXAnchor.constraint(equalTo: profileImageView.trailingAnchor),
-            editPhotoButton.centerYAnchor.constraint(equalTo: profileImageView.topAnchor),
-            editPhotoButton.heightAnchor.constraint(equalToConstant: 100),
-            editPhotoButton.widthAnchor.constraint(equalToConstant: 100)
+            editProfileImageButton.centerXAnchor.constraint(equalTo: profileImageView.trailingAnchor),
+            editProfileImageButton.centerYAnchor.constraint(equalTo: profileImageView.topAnchor),
+            editProfileImageButton.heightAnchor.constraint(equalToConstant: 100),
+            editProfileImageButton.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
     
