@@ -32,7 +32,7 @@ extension ProfileViewController {
         
     }
     
-    func setProfileLabelConstraints() {
+    private func setProfileLabelConstraints() {
         profileLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -44,7 +44,7 @@ extension ProfileViewController {
         ])
     }
     
-    func setProfileImageConstraints() {
+    private func setProfileImageConstraints() {
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -55,7 +55,7 @@ extension ProfileViewController {
         ])
     }
     
-    func setDisplayNameConstraints() {
+    private func setDisplayNameConstraints() {
         displayNameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -66,7 +66,7 @@ extension ProfileViewController {
         ])
     }
     
-    func setEditDisplayNameButtonConstraints() {
+    private func setEditDisplayNameButtonConstraints() {
         editDisplayNameButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -77,7 +77,7 @@ extension ProfileViewController {
         ])
     }
     
-    func setInfoLabelConstraints() {
+    private func setInfoLabelConstraints() {
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -88,7 +88,7 @@ extension ProfileViewController {
         ])
     }
     
-    func setEditPhotoButtonConstraints() {
+    private func setEditPhotoButtonConstraints() {
         editProfileImageButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
