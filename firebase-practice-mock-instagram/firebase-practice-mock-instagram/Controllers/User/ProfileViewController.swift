@@ -11,20 +11,13 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     //TODO: Add collection view to show only currentUser posts
-    
+
     //MARK: - UI Objects
-    lazy var profileLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Profile"
-        label.textAlignment = .center
-        return label
-    }()
     
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .yellow
-        //TODO: Figure out why corners are not rounding
-        imageView.layer.cornerRadius = imageView.frame.height / 2
+        imageView.layer.cornerRadius = 120
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -33,22 +26,25 @@ class ProfileViewController: UIViewController {
     lazy var displayNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 30)
         return label
     }()
     
     lazy var editDisplayNameButton: UIButton = {
         let button = UIButton()
         button.setTitle("Edit", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Arial", size: 10)
-        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
+        button.setTitleColor(.brown, for: .normal)
         button.addTarget(self, action: #selector(editDisplayNameButtonPressed), for: .touchUpInside)
         return button
     }()
     
-    lazy var infoLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        return label
+    lazy var infoTextView: UITextView = {
+        let textView = UITextView()
+        textView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 20)
+        textView.isEditable = false
+        textView.backgroundColor = .clear
+        return textView
     }()
     
     lazy var editProfileImageButton: UIButton = {
@@ -85,6 +81,7 @@ class ProfileViewController: UIViewController {
         
         getUserInfo()
         updateInfoLabel()
+
     }
     
     //MARK: - Objc Functions
@@ -185,7 +182,7 @@ class ProfileViewController: UIViewController {
     }
     
     private func updateInfoLabel() {
-        infoLabel.text = """
+        infoTextView.text = """
         Email: \(email)
         Total posts: \(postCount)
         """

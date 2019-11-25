@@ -13,44 +13,30 @@ extension ProfileViewController {
     
     //MARK: - UI Constraint Methods
     func addSubviews() {
-        view.addSubview(profileLabel)
         view.addSubview(profileImageView)
         view.addSubview(displayNameLabel)
         view.addSubview(editDisplayNameButton)
-        view.addSubview(infoLabel)
+        view.addSubview(infoTextView)
         view.addSubview(editProfileImageButton)
         
     }
     
     func addConstraints() {
-        setProfileLabelConstraints()
         setProfileImageConstraints()
         setDisplayNameConstraints()
         setEditDisplayNameButtonConstraints()
-        setInfoLabelConstraints()
+        setInfoTextViewConstraints()
         setEditPhotoButtonConstraints()
         
     }
-    
-    private func setProfileLabelConstraints() {
-        profileLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            profileLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            profileLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            profileLabel.heightAnchor.constraint(equalToConstant: 100),
-            profileLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5)
-            
-        ])
-    }
-    
     private func setProfileImageConstraints() {
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            profileImageView.topAnchor.constraint(equalTo: profileLabel.bottomAnchor, constant: 20),
+            profileImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             profileImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            profileImageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            profileImageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.6),
             profileImageView.heightAnchor.constraint(equalTo: profileImageView.widthAnchor)
         ])
     }
@@ -59,10 +45,10 @@ extension ProfileViewController {
         displayNameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            displayNameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 5),
+            displayNameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10),
             displayNameLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             displayNameLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            displayNameLabel.heightAnchor.constraint(equalToConstant: 50)
+            displayNameLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
@@ -70,21 +56,21 @@ extension ProfileViewController {
         editDisplayNameButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            editDisplayNameButton.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor),
+            editDisplayNameButton.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 5),
             editDisplayNameButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             editDisplayNameButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
             editDisplayNameButton.heightAnchor.constraint(equalToConstant: 10)
         ])
     }
     
-    private func setInfoLabelConstraints() {
-        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+    private func setInfoTextViewConstraints() {
+        infoTextView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            infoLabel.topAnchor.constraint(equalTo: editDisplayNameButton.bottomAnchor, constant: 20),
-            infoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            infoLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            infoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+            infoTextView.topAnchor.constraint(equalTo: editDisplayNameButton.bottomAnchor, constant: 25),
+            infoTextView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            infoTextView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            infoTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
     
@@ -92,8 +78,8 @@ extension ProfileViewController {
         editProfileImageButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            editProfileImageButton.centerXAnchor.constraint(equalTo: profileImageView.trailingAnchor),
-            editProfileImageButton.centerYAnchor.constraint(equalTo: profileImageView.topAnchor),
+            editProfileImageButton.trailingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 15),
+            editProfileImageButton.topAnchor.constraint(equalTo: profileImageView.topAnchor, constant: -15),
             editProfileImageButton.heightAnchor.constraint(equalToConstant: 100),
             editProfileImageButton.widthAnchor.constraint(equalToConstant: 100)
         ])
