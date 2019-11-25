@@ -16,6 +16,7 @@ extension ProfileViewController {
         view.addSubview(profileImageView)
         view.addSubview(displayNameLabel)
         view.addSubview(editDisplayNameButton)
+        view.addSubview(signOutButton)
         view.addSubview(infoTextView)
         view.addSubview(editProfileImageButton)
         
@@ -25,6 +26,7 @@ extension ProfileViewController {
         setProfileImageConstraints()
         setDisplayNameConstraints()
         setEditDisplayNameButtonConstraints()
+        setSignOutButtonConstraints()
         setInfoTextViewConstraints()
         setEditPhotoButtonConstraints()
         
@@ -63,6 +65,17 @@ extension ProfileViewController {
         ])
     }
     
+    private func setSignOutButtonConstraints() {
+        signOutButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            signOutButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            signOutButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            signOutButton.heightAnchor.constraint(equalToConstant: 30),
+            signOutButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8)
+        ])
+    }
+    
     private func setInfoTextViewConstraints() {
         infoTextView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -70,7 +83,7 @@ extension ProfileViewController {
             infoTextView.topAnchor.constraint(equalTo: editDisplayNameButton.bottomAnchor, constant: 25),
             infoTextView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             infoTextView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            infoTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+            infoTextView.bottomAnchor.constraint(equalTo: signOutButton.topAnchor, constant: -20)
         ])
     }
     

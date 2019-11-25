@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     //TODO: Add collection view to show only currentUser posts
-
+    
     //MARK: - UI Objects
     
     lazy var profileImageView: UIImageView = {
@@ -55,6 +55,16 @@ class ProfileViewController: UIViewController {
         return button
     }()
     
+    lazy var signOutButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Sign Out", for: .normal)
+        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
+        button.showsTouchWhenHighlighted = true
+        button.setTitleColor(.brown, for: .normal)
+        button.addTarget(self, action: #selector(signOutButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
     //MARK: - Internal Properties
     var profileImageURL: URL? = nil
     
@@ -74,7 +84,7 @@ class ProfileViewController: UIViewController {
         
         addSubviews()
         addConstraints()
-    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +92,6 @@ class ProfileViewController: UIViewController {
         
         getUserInfo()
         updateInfoLabel()
-
     }
     
     //MARK: - Objc Functions
@@ -113,7 +122,7 @@ class ProfileViewController: UIViewController {
         
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
-       
+        
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -124,6 +133,19 @@ class ProfileViewController: UIViewController {
         imagePickerViewController.allowsEditing = true
         imagePickerViewController.mediaTypes = ["public.image"]
         self.present(imagePickerViewController, animated: true, completion: nil)
+    }
+    
+    @objc func signOutButtonPressed() {
+        FirebaseAuthService.manager.signOutUser { (result) in
+            switch result {
+            case .failure(let error):
+                print("Could not sign out:\(error)")
+            case .success(()):
+                print("Signed out")
+                self.goToLogInVC()
+            }
+        }
+        
     }
     
     //MARK: - Private Methods
@@ -162,7 +184,7 @@ class ProfileViewController: UIViewController {
         } else {
             self.displayNameLabel.text = "No display name set"
         }
-    
+        
     }
     
     private func getProfileImage() {
@@ -171,7 +193,7 @@ class ProfileViewController: UIViewController {
                 switch result {
                 case .failure(let error):
                     print(error)
-                    //TODO: showAlert - could not update photo
+                //TODO: showAlert - could not update photo
                 case .success(let image):
                     //TODO: Add activity indicator
                     self.profileImageView.image = image
@@ -198,5 +220,15 @@ class ProfileViewController: UIViewController {
                 print("Updated displayName for user in Firestore")
             }
         }
+    }
+    
+    private func goToLogInVC() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+            else { return }
+        
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromTop, animations: {
+                window.rootViewController = LogInViewController()
+        })
     }
 }
