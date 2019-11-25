@@ -14,18 +14,21 @@ class LogInViewController: UIViewController {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Pursuitgram"
+        label.font = UIFont(name: "Zapfino", size: 25)
         label.textAlignment = .center
         return label
     }()
     
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
+        textField.placeholder = "Enter Email"
         textField.borderStyle = .roundedRect
         return textField
     }()
     
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
+        textField.placeholder = "Enter Password"
         textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
         return textField
@@ -34,7 +37,9 @@ class LogInViewController: UIViewController {
     lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Login", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
+        button.setTitleColor(.brown, for: .normal)
+        button.showsTouchWhenHighlighted = true
         button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         return button
     }()
@@ -50,7 +55,9 @@ class LogInViewController: UIViewController {
     lazy var createAccountButton: UIButton = {
         let button = UIButton()
         button.setTitle("Create New Account", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
+        button.setTitleColor(.brown, for: .normal)
+        button.showsTouchWhenHighlighted = true
         button.addTarget(self, action: #selector(createAccountButtonPressed), for: .touchUpInside)
         return button
     }()

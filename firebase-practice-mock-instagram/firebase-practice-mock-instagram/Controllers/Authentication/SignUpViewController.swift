@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Create Account"
+        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
         label.textAlignment = .center
         return label
     }()
@@ -38,9 +39,11 @@ class SignUpViewController: UIViewController {
     
     lazy var createButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Create", for: .normal)
+        button.setTitle("Create New Account", for: .normal)
         button.addTarget(self, action: #selector(trySignUp), for: .touchUpInside)
-        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
+        button.setTitleColor(.brown, for: .normal)
+        button.showsTouchWhenHighlighted = true
         return button
     }()
     
