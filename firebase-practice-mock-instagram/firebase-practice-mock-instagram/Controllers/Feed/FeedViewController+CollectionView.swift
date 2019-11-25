@@ -35,6 +35,16 @@ extension FeedViewController: UICollectionViewDataSource {
         }
     
         //TODO: load displayName
+        let creatorID = post.creatorID
+        
+        FirestoreService.manager.getDisplayNameForUser(creatorID: creatorID) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let displayNameFromFB):
+                cell.displayNameLabel.text = displayNameFromFB
+            }
+        }
         
         
         return cell
@@ -44,6 +54,8 @@ extension FeedViewController: UICollectionViewDataSource {
 }
 
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
+    //TODO: Edit size and configuration of cells
+    
     override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
         return CGSize(width: view.frame.width / 3 , height: view.frame.width / 3 )
     }
