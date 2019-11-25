@@ -13,48 +13,34 @@ extension ImageDetailViewController {
     
     //MARK: - UI Constraint Methods
     func addSubviews() {
-        view.addSubview(imageDetailLabel)
         view.addSubview(postImageView)
-        view.addSubview(infoLabel)
+        view.addSubview(infoTextView)
     }
     
     func addConstraints() {
-        setImageDetailLabelConstraints()
         setPostImageViewConstraints()
-        setInfoLabelConstraints()
-    }
-    
-    private func setImageDetailLabelConstraints() {
-        imageDetailLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            imageDetailLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            imageDetailLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            imageDetailLabel.heightAnchor.constraint(equalToConstant: 100),
-            imageDetailLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5)
-            
-        ])
+        setInfoTextViewConstraints()
     }
     
     private func setPostImageViewConstraints() {
         postImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            postImageView.topAnchor.constraint(equalTo: imageDetailLabel.bottomAnchor, constant: 20),
+            postImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             postImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            postImageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            postImageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
             postImageView.heightAnchor.constraint(equalTo: postImageView.widthAnchor)
         ])
     }
     
-    private func setInfoLabelConstraints() {
-        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+    private func setInfoTextViewConstraints() {
+        infoTextView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            infoLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 20),
-            infoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            infoLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            infoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+            infoTextView.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 20),
+            infoTextView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            infoTextView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            infoTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
     

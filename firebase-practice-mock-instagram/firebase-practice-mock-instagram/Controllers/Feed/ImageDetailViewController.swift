@@ -11,23 +11,18 @@ import UIKit
 class ImageDetailViewController: UIViewController {
 
     //MARK: - UI Objects
-    lazy var imageDetailLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Post Details"
-        label.textAlignment = .center
-        return label
-    }()
-    
     lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .yellow
         return imageView
     }()
     
-    lazy var infoLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        return label
+    lazy var infoTextView: UITextView = {
+        let textView = UITextView()
+        textView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 20)
+        textView.isEditable = false
+        textView.backgroundColor = .clear
+        return textView
     }()
     
     //MARK: - Internal Properties
@@ -70,7 +65,7 @@ class ImageDetailViewController: UIViewController {
     }
     
     private func updateInfoLabel() {
-        infoLabel.text = """
+        infoTextView.text = """
         Submitted by: \(displayName)
         Date posted: \(dateCreated)
         """
