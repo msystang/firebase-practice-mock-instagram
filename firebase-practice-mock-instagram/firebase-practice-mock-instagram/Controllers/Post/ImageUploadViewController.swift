@@ -13,20 +13,26 @@ class ImageUploadViewController: UIViewController {
     //MARK: - UI Objects
     lazy var uploadImageLabel: UILabel = {
         let label = UILabel()
-        label.text = "Upload New Image"
+        label.text = "Create New Post"
+        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 25)
         label.textAlignment = .center
         return label
     }()
     
     lazy var imageToUploadImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .yellow
+        imageView.backgroundColor = .gray
+        imageView.image = UIImage(named: "no-photo")
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 
     lazy var selectImageButton: UIButton = {
         let button = UIButton()
         button.setTitle("Select Image", for: .normal)
+        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
+        button.setTitleColor(.brown, for: .normal)
+        button.showsTouchWhenHighlighted = true
         button.addTarget(self, action: #selector(selectImageButtonPressed), for: .touchUpInside)
         return button
     }()
@@ -34,6 +40,9 @@ class ImageUploadViewController: UIViewController {
     lazy var uploadButton: UIButton = {
         let button = UIButton()
         button.setTitle("Upload", for: .normal)
+        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
+        button.setTitleColor(.brown, for: .normal)
+        button.showsTouchWhenHighlighted = true
         button.addTarget(self, action: #selector(uploadButtonPressed), for: .touchUpInside)
         return button
     }()
@@ -76,12 +85,34 @@ class ImageUploadViewController: UIViewController {
             switch result {
             case .failure(let error):
                 print(error)
-                //TODO: add alert - could not create post
+                self.showAlert(title: "Error", message: "Could not upload post: \(error)")
                 //TODO: segue to FeedVC
             case .success:
-                print("Post created in Firestore")
-                //TODO: add alert - post created!
+                self.showAlert(title: "Success", message: "Image posted successfully!")
             }
         }
+    }
+    
+    //MARK: - Private Methods
+    private func showAlert(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        present(alertVC, animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.goToFeed()
+        }
+    }
+    
+    private func goToFeed() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+            else { return }
+        
+        UIView.transition(with: window, duration: 0.2, options: .transitionFlipFromLeft, animations: {
+                window.rootViewController = {
+                    let feedVC = AppTabBarViewController()
+                    feedVC.selectedIndex = 0
+                    return feedVC
+                }()
+        })
     }
 }

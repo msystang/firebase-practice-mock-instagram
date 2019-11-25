@@ -13,14 +13,14 @@ extension ImageUploadViewController {
     
     //MARK: - UI Constraint Methods
     func addSubviews() {
-        view.addSubview(uploadImageLabel)
         view.addSubview(imageToUploadImageView)
+        view.addSubview(uploadImageLabel)
         view.addSubview(buttonStackView)
     }
     
     func addConstraints() {
-        setUploadImageLabelConstraints()
         setImageToUploadImageViewConstraints()
+        setUploadImageLabelConstraints()
         setButtonStackViewConstraints()
     }
     
@@ -30,8 +30,8 @@ extension ImageUploadViewController {
         NSLayoutConstraint.activate([
             uploadImageLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             uploadImageLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            uploadImageLabel.heightAnchor.constraint(equalToConstant: 100),
-            uploadImageLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5)
+            uploadImageLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            uploadImageLabel.bottomAnchor.constraint(equalTo: imageToUploadImageView.topAnchor, constant: 15)
         ])
     }
     
@@ -39,9 +39,9 @@ extension ImageUploadViewController {
         imageToUploadImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            imageToUploadImageView.topAnchor.constraint(equalTo: uploadImageLabel.bottomAnchor, constant: 20),
             imageToUploadImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            imageToUploadImageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            imageToUploadImageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            imageToUploadImageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
             imageToUploadImageView.heightAnchor.constraint(equalTo: imageToUploadImageView.widthAnchor)
         ])
     }

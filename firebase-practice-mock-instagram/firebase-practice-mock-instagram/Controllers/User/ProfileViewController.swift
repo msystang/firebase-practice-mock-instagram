@@ -34,6 +34,7 @@ class ProfileViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Edit", for: .normal)
         button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
+        button.showsTouchWhenHighlighted = true
         button.setTitleColor(.brown, for: .normal)
         button.addTarget(self, action: #selector(editDisplayNameButtonPressed), for: .touchUpInside)
         return button

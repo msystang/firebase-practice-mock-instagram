@@ -57,7 +57,7 @@ class FirebaseStorageService {
     func getImage(photoUrl: URL? = nil, photoUrlStr: String? = nil, completion: @escaping (Result<UIImage,Error>) -> ()) {
         
         if let photoUrl = photoUrl {
-            imagesFolderReference.storage.reference(forURL: photoUrl.absoluteString).getData(maxSize: 400000) { (data, error) in
+            imagesFolderReference.storage.reference(forURL: photoUrl.absoluteString).getData(maxSize: 5000000) { (data, error) in
                 if let error = error {
                     completion(.failure(error))
                 } else if let data = data, let image = UIImage(data: data) {
@@ -67,7 +67,7 @@ class FirebaseStorageService {
         }
         
         if let photoUrlStr = photoUrlStr {
-            imagesFolderReference.storage.reference(forURL: photoUrlStr).getData(maxSize: 400000) { (data, error) in
+            imagesFolderReference.storage.reference(forURL: photoUrlStr).getData(maxSize: 5000000) { (data, error) in
                 if let error = error {
                     completion(.failure(error))
                 } else if let data = data, let image = UIImage(data: data) {
