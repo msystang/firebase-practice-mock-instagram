@@ -10,8 +10,7 @@ import UIKit
 
 class ImageUploadViewController: UIViewController {
     
-    // MARK: - UI Objects
-    
+    //MARK: - UI Objects
     lazy var uploadImageLabel: UILabel = {
         let label = UILabel()
         label.text = "Upload New Image"
@@ -48,8 +47,10 @@ class ImageUploadViewController: UIViewController {
         return stackView
     }()
     
+    //MARK: - Internal Properties
     var postImageURL: String? = nil
     
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,6 +58,7 @@ class ImageUploadViewController: UIViewController {
         addConstraints()
     }
     
+    //MARK: - Objc Functions
     @objc func selectImageButtonPressed() {
         let imagePickerViewController = UIImagePickerController()
         imagePickerViewController.delegate = self

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//MARK: - CollectionView Methods
 extension FeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
@@ -77,7 +78,6 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
         } else {
             //TODO: handle no displayName
         }
-        
         
         present(imageDetailVC, animated: true, completion: nil)
     }

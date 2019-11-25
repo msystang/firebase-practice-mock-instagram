@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
     
     //TODO: Add collection view to show only currentUser posts
     
-    // MARK: - UI Objects
+    //MARK: - UI Objects
     lazy var profileLabel: UILabel = {
         let label = UILabel()
         label.text = "Profile"
@@ -88,7 +88,6 @@ class ProfileViewController: UIViewController {
     }
     
     //MARK: - Objc Functions
-    
     @objc func editDisplayNameButtonPressed(){
         let alertController = UIAlertController(title: "Edit Display Name", message: nil, preferredStyle: .alert)
         alertController.addTextField(configurationHandler: nil)
@@ -128,8 +127,8 @@ class ProfileViewController: UIViewController {
         imagePickerViewController.mediaTypes = ["public.image"]
         self.present(imagePickerViewController, animated: true, completion: nil)
     }
-    //MARK: - Private Methods
     
+    //MARK: - Private Methods
     private func getUserInfo() {
         getEmail()
         getPostCount()

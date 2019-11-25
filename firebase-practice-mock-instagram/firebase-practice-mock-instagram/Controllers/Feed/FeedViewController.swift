@@ -10,8 +10,7 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
-    // MARK: - UI Objects
-    
+    //MARK: - UI Objects
     lazy var feedCollectionView: UICollectionView = {
         let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = .clear
@@ -21,12 +20,14 @@ class FeedViewController: UIViewController {
         return collectionView
     }()
     
+    //MARK: - Internal Properties
     var posts = [Post]() {
         didSet {
             feedCollectionView.reloadData()
         }
     }
     
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,7 +41,8 @@ class FeedViewController: UIViewController {
         getPostsFromFirestore()
     }
 
-    func getPostsFromFirestore() {
+    //MARK: - Private Methods
+    private func getPostsFromFirestore() {
         FirestoreService.manager.getAllPosts(sortingCriteria: .fromNewestToOldest) { (result) in
             switch result {
             case .failure(let error):

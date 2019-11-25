@@ -144,7 +144,7 @@ class LogInViewController: UIViewController {
         setCreateAccountButtonConstraints()
     }
     
-    func setLogInStackViewConstraints() {
+    private func setLogInStackViewConstraints() {
         logInStackView.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -158,7 +158,7 @@ class LogInViewController: UIViewController {
         ])
     }
     
-    func setTitleLabelConstraints() {
+   private func setTitleLabelConstraints() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -169,7 +169,7 @@ class LogInViewController: UIViewController {
         ])
     }
     
-    func setCreateAccountButtonConstraints() {
+    private func setCreateAccountButtonConstraints() {
         createAccountButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([

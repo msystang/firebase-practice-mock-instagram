@@ -9,6 +9,8 @@
 import UIKit
 
 class FeedCollectionViewCell: UICollectionViewCell {
+    
+    //MARK: - UI Objects
     lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .yellow
@@ -21,7 +23,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    // MARK: - Initializers
+    //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         //TODO: Add constraints
@@ -43,7 +45,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         setDisplayNameLabelConstraints()
     }
     
-    func setPostImageViewConstraints() {
+    private func setPostImageViewConstraints() {
         postImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -54,7 +56,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func setDisplayNameLabelConstraints() {
+    private func setDisplayNameLabelConstraints() {
         displayNameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([

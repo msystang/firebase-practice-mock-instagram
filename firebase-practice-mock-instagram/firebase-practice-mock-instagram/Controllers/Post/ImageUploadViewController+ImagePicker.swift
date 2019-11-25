@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 // TODO: Add permissions for photo library
+
+//MARK: - ImagePicker Methods
 extension ImageUploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else {

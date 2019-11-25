@@ -10,6 +10,7 @@ import UIKit
 
 class AppTabBarViewController: UITabBarController {
     
+    //MARK: - UI Objects
     lazy var feedVC: UINavigationController = {
         let navController = UINavigationController(rootViewController: FeedViewController())
         navController.view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
@@ -26,13 +27,12 @@ class AppTabBarViewController: UITabBarController {
     
     lazy var profileVC: UINavigationController = {
         let navController = UINavigationController(rootViewController: ProfileViewController())
-        //navController.user = AppUser(from: FirebaseAuthService.manager.currentUser!)
-        //navController.isCurrentUser = true
         navController.view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
         navController.isNavigationBarHidden = true
         return navController
     }()
     
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         

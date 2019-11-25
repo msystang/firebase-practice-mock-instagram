@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
+    //MARK: - UI Objects
     lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Create Account"
@@ -51,6 +52,7 @@ class SignUpViewController: UIViewController {
         return stackView
     }()
     
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
@@ -59,8 +61,7 @@ class SignUpViewController: UIViewController {
     }
     
 
-    //MARK: - Obj-C Methods
-    
+    //MARK: - Objc Functions
     @objc func validateFields() {
         guard emailTextField.hasText, passwordTextField.hasText else {
             //TODO: Change color of button when enabled/disabled 
@@ -93,7 +94,6 @@ class SignUpViewController: UIViewController {
     
     
     //MARK: - Private Methods
-    
     private func showAlert(with title: String, and message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -153,7 +153,7 @@ class SignUpViewController: UIViewController {
         setCreateAccountStackViewConstraints()
     }
     
-    func setHeaderLabelConstraints() {
+    private func setHeaderLabelConstraints() {
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -163,7 +163,8 @@ class SignUpViewController: UIViewController {
             headerLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
         ])
     }
-    func setCreateAccountStackViewConstraints() {
+    
+    private func setCreateAccountStackViewConstraints() {
         createAccountStackView.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false

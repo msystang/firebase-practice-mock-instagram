@@ -10,8 +10,7 @@ import UIKit
 
 class ImageDetailViewController: UIViewController {
 
-    // MARK: - UI Objects
-    
+    //MARK: - UI Objects
     lazy var imageDetailLabel: UILabel = {
         let label = UILabel()
         label.text = "Post Details"
@@ -31,6 +30,7 @@ class ImageDetailViewController: UIViewController {
         return label
     }()
     
+    //MARK: - Internal Properties
     var post: Post!
     
     var postImage = UIImage() {
@@ -42,7 +42,7 @@ class ImageDetailViewController: UIViewController {
     var displayName = String()
     var dateCreated = String()
     
-    
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
@@ -60,8 +60,8 @@ class ImageDetailViewController: UIViewController {
         updateInfoLabel()
     }
 
-    
-    func getDate() {
+    //MARK: - Private Methods
+    private func getDate() {
         if let date = post.dateCreated?.description {
             dateCreated = date
         } else {
@@ -69,7 +69,7 @@ class ImageDetailViewController: UIViewController {
         }
     }
     
-    func updateInfoLabel() {
+    private func updateInfoLabel() {
         infoLabel.text = """
         Submitted by: \(displayName)
         Date posted: \(dateCreated)
