@@ -228,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				EA30E8BA23846DCC00734AE0 /* FeedViewController.swift */,
+				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -265,7 +266,6 @@
 				EA30E8BC23846DE500734AE0 /* ImageUploadViewController.swift */,
 				EAFA9705238C42240008F7B2 /* ImageUploadViewController+ImagePicker.swift */,
 				EAFA9703238C34960008F7B2 /* ImageUploadViewController+Constraints.swift */,
-				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
