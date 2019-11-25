@@ -60,10 +60,24 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let cell = collectionView.cellForItem(at: indexPath) as! FeedCollectionViewCell
         let post = posts[indexPath.row]
         let imageDetailVC = ImageDetailViewController()
+        
         imageDetailVC.post = post
+        
+        if let cellImage = cell.postImageView.image {
+            imageDetailVC.postImage = cellImage
+        } else {
+            //TODO: Add default image
+        }
+        
+        if let cellName = cell.displayNameLabel.text {
+            imageDetailVC.displayName = cellName
+        } else {
+            //TODO: handle no displayName
+        }
+        
         
         present(imageDetailVC, animated: true, completion: nil)
     }

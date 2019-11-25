@@ -27,14 +27,21 @@ class ImageDetailViewController: UIViewController {
     
     lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.text = """
-        Submitted by: displayName
-        Date: dateCreated
-        """
+        label.numberOfLines = 0
         return label
     }()
     
     var post: Post!
+    
+    var postImage = UIImage() {
+        didSet {
+            postImageView.image = postImage
+        }
+    }
+    
+    var displayName = String()
+    var dateCreated = String()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +53,27 @@ class ImageDetailViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        getDate()
+        updateInfoLabel()
+    }
 
-   
+    
+    func getDate() {
+        if let date = post.dateCreated?.description {
+            dateCreated = date
+        } else {
+            dateCreated = "Cannot get date."
+        }
+    }
+    
+    func updateInfoLabel() {
+        infoLabel.text = """
+        Submitted by: \(displayName)
+        Date posted: \(dateCreated)
+        """
+    }
 
 }
