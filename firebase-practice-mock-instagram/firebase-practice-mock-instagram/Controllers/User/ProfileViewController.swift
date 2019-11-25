@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    //TODO: Add collection view to show only currentUser posts
+    
     // MARK: - UI Objects
     lazy var profileLabel: UILabel = {
         let label = UILabel()
@@ -52,6 +54,7 @@ class ProfileViewController: UIViewController {
     lazy var editProfileImageButton: UIButton = {
         let button = UIButton()
         button.setImage(.add, for: .normal)
+        button.addTarget(self, action: #selector(editProfileImageButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -62,7 +65,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-//    var profileImageURL: String? = nil
+    var profileImageURL: URL? = nil
     
     var email = String()
     
@@ -125,7 +128,14 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func editProfileImageButtonPressed() {
-        
+//        DispatchQueue.main.async {
+            let imagePickerViewController = UIImagePickerController()
+            imagePickerViewController.delegate = self
+            imagePickerViewController.sourceType = .photoLibrary
+            imagePickerViewController.allowsEditing = true
+            imagePickerViewController.mediaTypes = ["public.image"]
+            self.present(imagePickerViewController, animated: true, completion: nil)
+//        }
         
     }
     //MARK: - Private Methods
@@ -168,10 +178,10 @@ class ProfileViewController: UIViewController {
     
     }
     
+    //TODO: Figure out why photoURL is nil when there is a urlStr in firebase
     private func getProfileImage() {
-        if let profileImageUrl = FirebaseAuthService.manager.currentUser?.photoURL {
-        // TODO: Firebase Storage
-            FirebaseStorageService.profileImageManager.getImage(photoUrl: profileImageUrl) { (result) in
+        if let profileImageUrlFromFB = FirebaseAuthService.manager.currentUser?.photoURL {
+            FirebaseStorageService.profileImageManager.getImage(photoUrl: profileImageUrlFromFB) { (result) in
                 switch result {
                 case .failure(let error):
                     print(error)

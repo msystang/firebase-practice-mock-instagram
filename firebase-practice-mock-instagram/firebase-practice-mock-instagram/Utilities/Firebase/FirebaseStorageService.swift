@@ -36,7 +36,7 @@ class FirebaseStorageService {
         
     }
     
-    func storeImage(image: Data,  completion: @escaping (Result<String,Error>) -> ()) {
+    func storeImage(image: Data,  completion: @escaping (Result<URL,Error>) -> ()) {
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         let uuid = UUID()
@@ -47,7 +47,7 @@ class FirebaseStorageService {
             } else {
                 imageLocation.downloadURL { (url, error) in
                     guard error == nil else {completion(.failure(error!));return}
-                    guard let url = url?.absoluteString else {completion(.failure(error!));return}
+                    guard let url = url else {completion(.failure(error!));return}
                     completion(.success(url))
                 }
             }
