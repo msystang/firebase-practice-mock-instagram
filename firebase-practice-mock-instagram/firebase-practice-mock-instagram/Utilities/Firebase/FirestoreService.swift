@@ -16,7 +16,7 @@ fileprivate enum FireStoreCollections: String {
 
 enum SortingCriteria: String {
     case fromNewestToOldest = "dateCreated"
-
+    
     var shouldSortDescending: Bool {
         switch self {
         case .fromNewestToOldest:
@@ -59,7 +59,7 @@ class FirestoreService {
             updateFields["photoURL"] = photo.absoluteString
         }
         
-       
+        
         //PUT request
         db.collection(FireStoreCollections.users.rawValue).document(userId).updateData(updateFields) { (error) in
             if let error = error {
@@ -100,7 +100,7 @@ class FirestoreService {
     }
     
     func getAllPosts(sortingCriteria: SortingCriteria? = nil, completion: @escaping (Result<[Post], Error>) -> ()) {
-
+        
         let completionHandler: FIRQuerySnapshotBlock = {(snapshot, error) in
             if let error = error {
                 completion(.failure(error))

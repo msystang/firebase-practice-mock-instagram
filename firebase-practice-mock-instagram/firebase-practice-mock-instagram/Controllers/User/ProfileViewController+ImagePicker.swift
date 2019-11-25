@@ -28,13 +28,13 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             switch result{
             case .success(let url):
                 self?.profileImageURL = url
-                FirestoreService.manager.updateCurrentUser(displayName: nil, photoURL: url) { (result) in
+                FirebaseAuthService.manager.updateUserFields(userName: nil, photoURL: url) { (result) in
                     switch result {
                     case .failure(let error):
                         print(error)
                     case .success(()):
                         //TODO: showAlert - saved
-                        print("Photo saved in firestore.")
+                        print("Photo saved in FirebaseAuth.")
                     }
                 }
             case .failure(let error):
