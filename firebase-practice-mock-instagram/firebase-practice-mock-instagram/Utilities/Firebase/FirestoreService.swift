@@ -44,15 +44,15 @@ class FirestoreService {
         }
     }
     
-    func updateCurrentUser(userName: String? = nil, photoURL: URL? = nil, completion: @escaping (Result<(), Error>) -> ()){
+    func updateCurrentUser(displayName: String? = nil, photoURL: URL? = nil, completion: @escaping (Result<(), Error>) -> ()){
         guard let userId = FirebaseAuthService.manager.currentUser?.uid else {
             //MARK: TODO - handle can't get current user
             return
         }
         var updateFields = [String:Any]()
         
-        if let user = userName {
-            updateFields["userName"] = user
+        if let user = displayName {
+            updateFields["displayName"] = user
         }
         
         if let photo = photoURL {
