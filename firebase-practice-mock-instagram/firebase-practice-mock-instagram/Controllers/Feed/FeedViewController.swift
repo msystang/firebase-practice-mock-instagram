@@ -9,8 +9,16 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-
+    
     //MARK: - UI Objects
+    lazy var headerLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Pursuitgram"
+        label.font = UIFont(name: "Zapfino", size: 25)
+        label.textAlignment = .center
+        return label
+    }()
+    
     lazy var feedCollectionView: UICollectionView = {
         let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = .clear
@@ -30,7 +38,7 @@ class FeedViewController: UIViewController {
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         addSubviews()
         addConstraints()
         getPostsFromFirestore()
@@ -41,7 +49,7 @@ class FeedViewController: UIViewController {
         
         getPostsFromFirestore()
     }
-
+    
     //MARK: - Private Methods
     private func getPostsFromFirestore() {
         FirestoreService.manager.getAllPosts(sortingCriteria: .fromNewestToOldest) { (result) in

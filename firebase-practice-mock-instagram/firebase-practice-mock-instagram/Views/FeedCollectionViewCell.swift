@@ -20,6 +20,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     lazy var displayNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 10)
+        label.textAlignment = .center
         label.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         label.adjustsFontSizeToFitWidth = true
         return label
