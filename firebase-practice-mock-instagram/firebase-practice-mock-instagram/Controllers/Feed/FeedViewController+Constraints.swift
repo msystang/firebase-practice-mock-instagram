@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import UIKit
+
+extension FeedViewController {
+    
+    //MARK: - UI Constraint Methods
+    func addSubviews() {
+        view.addSubview(feedCollectionView)
+    }
+    
+    func addConstraints() {
+        feedCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            feedCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            feedCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            feedCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            feedCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ])
+    }
+}
