@@ -46,7 +46,6 @@ extension FeedViewController: UICollectionViewDataSource {
             }
         }
         
-        
         return cell
     }
     
@@ -57,8 +56,15 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     //TODO: Edit size and configuration of cells
     
     override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-        return CGSize(width: view.frame.width / 3 , height: view.frame.width / 3 )
+        return CGSize(width: view.frame.width / 3 , height: view.frame.width / 3)
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let post = posts[indexPath.row]
+        let imageDetailVC = ImageDetailViewController()
+        imageDetailVC.post = post
+        
+        present(imageDetailVC, animated: true, completion: nil)
+    }
 }

@@ -32,8 +32,11 @@ class ImageDetailViewController: UIViewController {
         return label
     }()
     
+    var post: Post!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .yellow
 
         // Do any additional setup after loading the view.
     }
