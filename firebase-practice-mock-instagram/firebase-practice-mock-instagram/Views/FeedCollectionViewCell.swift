@@ -13,13 +13,15 @@ class FeedCollectionViewCell: UICollectionViewCell {
     //MARK: - UI Objects
     lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .yellow
+        imageView.backgroundColor = .gray
         return imageView
     }()
     
     lazy var displayNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "displayName"
+        label.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 10)
+        label.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -62,7 +64,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             displayNameLabel.bottomAnchor.constraint(equalTo: postImageView.bottomAnchor),
             displayNameLabel.centerXAnchor.constraint(equalTo: postImageView.centerXAnchor),
-            displayNameLabel.widthAnchor.constraint(equalTo: postImageView.widthAnchor, multiplier: 0.8),
+            displayNameLabel.widthAnchor.constraint(equalTo: postImageView.widthAnchor),
             displayNameLabel.heightAnchor.constraint(equalTo: postImageView.heightAnchor, multiplier: 0.2)
 
         ])

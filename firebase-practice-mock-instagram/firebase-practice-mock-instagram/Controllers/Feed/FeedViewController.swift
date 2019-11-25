@@ -33,6 +33,7 @@ class FeedViewController: UIViewController {
 
         addSubviews()
         addConstraints()
+        getPostsFromFirestore()
     }
     
     override func viewWillAppear(_ animated: Bool) {
