@@ -36,6 +36,8 @@
 		EAFA9708238C4A530008F7B2 /* FeedViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA9707238C4A530008F7B2 /* FeedViewController+Constraints.swift */; };
 		EAFA970A238C4B2A0008F7B2 /* FeedViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA9709238C4B2A0008F7B2 /* FeedViewController+CollectionView.swift */; };
 		EAFA970C238C5D8F0008F7B2 /* ImageDetailViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA970B238C5D8F0008F7B2 /* ImageDetailViewController+Constraints.swift */; };
+		EAFA970E238C6F610008F7B2 /* LoginViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA970D238C6F610008F7B2 /* LoginViewController+Constraints.swift */; };
+		EAFA9710238C6F8F0008F7B2 /* SignUpViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA970F238C6F8F0008F7B2 /* SignUpViewController+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		EAFA9707238C4A530008F7B2 /* FeedViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+Constraints.swift"; sourceTree = "<group>"; };
 		EAFA9709238C4B2A0008F7B2 /* FeedViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		EAFA970B238C5D8F0008F7B2 /* ImageDetailViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageDetailViewController+Constraints.swift"; sourceTree = "<group>"; };
+		EAFA970D238C6F610008F7B2 /* LoginViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Constraints.swift"; sourceTree = "<group>"; };
+		EAFA970F238C6F8F0008F7B2 /* SignUpViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+Constraints.swift"; sourceTree = "<group>"; };
 		F05052A10CC6B2FF9F5CA026 /* Pods-firebase-practice-mock-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-practice-mock-instagram.release.xcconfig"; path = "Target Support Files/Pods-firebase-practice-mock-instagram/Pods-firebase-practice-mock-instagram.release.xcconfig"; sourceTree = "<group>"; };
 		F5BA91300F8B124F1EE66D6E /* Pods-firebase-practice-mock-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-practice-mock-instagramTests.debug.xcconfig"; path = "Target Support Files/Pods-firebase-practice-mock-instagramTests/Pods-firebase-practice-mock-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,7 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				EA30E89623846BFB00734AE0 /* LogInViewController.swift */,
+				EAFA970D238C6F610008F7B2 /* LoginViewController+Constraints.swift */,
 				EA30E8CF2385EF7800734AE0 /* SignUpViewController.swift */,
+				EAFA970F238C6F8F0008F7B2 /* SignUpViewController+Constraints.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -449,7 +455,9 @@
 			files = (
 				EAFA96FF238B67A10008F7B2 /* ProfileViewController+ImagePicker.swift in Sources */,
 				EA30E8D02385EF7800734AE0 /* SignUpViewController.swift in Sources */,
+				EAFA9710238C6F8F0008F7B2 /* SignUpViewController+Constraints.swift in Sources */,
 				EA30E89723846BFB00734AE0 /* LogInViewController.swift in Sources */,
+				EAFA970E238C6F610008F7B2 /* LoginViewController+Constraints.swift in Sources */,
 				EAFA970C238C5D8F0008F7B2 /* ImageDetailViewController+Constraints.swift in Sources */,
 				EA30E89323846BFB00734AE0 /* AppDelegate.swift in Sources */,
 				EA30E8DC238A430E00734AE0 /* String+Validation.swift in Sources */,
