@@ -241,8 +241,8 @@
 		EA30E8DE238A43CA00734AE0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				EA30E8DF238A43E400734AE0 /* Extensions */,
 				EA30E8DD238A43B600734AE0 /* Firebase */,
+				EA30E8DF238A43E400734AE0 /* Extensions */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

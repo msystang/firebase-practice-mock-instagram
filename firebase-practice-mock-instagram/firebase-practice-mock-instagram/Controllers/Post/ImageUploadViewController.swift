@@ -14,39 +14,36 @@ class ImageUploadViewController: UIViewController {
     
     lazy var uploadImageLabel: UILabel = {
         let label = UILabel()
+        label.text = "Upload Image"
         return label
     }()
     
     lazy var imageToUploadImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = .yellow
         return imageView
     }()
     
     lazy var uploadButton: UIButton = {
         let button = UIButton()
-        return button
-    }()
-    
-    lazy var cancelButton: UIButton = {
-        let button = UIButton()
+        button.setTitle("Upload", for: .normal)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        addSubviews()
+        addConstraints()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func addSubviews() {
+        
     }
-    */
+    
+    private func addConstraints() {
+        
+        
+    }
 
 }

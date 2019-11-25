@@ -10,15 +10,27 @@ import UIKit
 
 class AppTabBarViewController: UITabBarController {
     
-    lazy var feedVC = UINavigationController(rootViewController: FeedViewController())
+    lazy var feedVC: UINavigationController = {
+        let navController = UINavigationController(rootViewController: FeedViewController())
+        navController.view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
+        navController.isNavigationBarHidden = true
+        return navController
+    }()
     
-    lazy var imageUploadVC = UINavigationController(rootViewController: ImageUploadViewController())
+    lazy var imageUploadVC: UINavigationController = {
+        let navController = UINavigationController(rootViewController: ImageUploadViewController())
+        navController.view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
+        navController.isNavigationBarHidden = true
+        return navController
+    }()
     
     lazy var profileVC: UINavigationController = {
-        let profileVC = ProfileViewController()
-        //profileVC.user = AppUser(from: FirebaseAuthService.manager.currentUser!)
-        //profileVC.isCurrentUser = true
-        return UINavigationController(rootViewController: profileVC)
+        let navController = UINavigationController(rootViewController: ProfileViewController())
+        //navController.user = AppUser(from: FirebaseAuthService.manager.currentUser!)
+        //navController.isCurrentUser = true
+        navController.view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
+        navController.isNavigationBarHidden = true
+        return navController
     }()
     
     override func viewDidLoad() {
