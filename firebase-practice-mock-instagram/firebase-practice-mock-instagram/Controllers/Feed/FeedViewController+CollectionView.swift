@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// TODO: Fix bug -> Display Name in Collection View does not update to new user
+
 //MARK: - CollectionView Methods
 extension FeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

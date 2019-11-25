@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    //TODO: Set alert that does not allow user to create new post if user profile is incomplete
     //TODO: Add collection view to show only currentUser posts
     
     //MARK: - UI Objects
@@ -182,7 +183,7 @@ class ProfileViewController: UIViewController {
         if let displayName = FirebaseAuthService.manager.currentUser?.displayName {
             self.displayNameLabel.text = displayName
         } else {
-            self.displayNameLabel.text = "No display name set"
+            self.displayNameLabel.text = "Set display name"
         }
         
     }
