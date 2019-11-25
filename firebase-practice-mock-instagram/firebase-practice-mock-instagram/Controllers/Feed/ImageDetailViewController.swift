@@ -14,21 +14,23 @@ class ImageDetailViewController: UIViewController {
     
     lazy var imageDetailLabel: UILabel = {
         let label = UILabel()
+        label.text = "Post Details"
+        label.textAlignment = .center
         return label
     }()
     
     lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = .yellow
         return imageView
     }()
     
-    lazy var submittedByLabel: UILabel = {
+    lazy var infoLabel: UILabel = {
         let label = UILabel()
-        return label
-    }()
-    
-    lazy var dateLabel: UILabel = {
-        let label = UILabel()
+        label.text = """
+        Submitted by: displayName
+        Date: dateCreated
+        """
         return label
     }()
     
@@ -36,20 +38,15 @@ class ImageDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        view.backgroundColor = #colorLiteral(red: 1, green: 0.9009202719, blue: 0.7107562423, alpha: 1)
+        
+        addSubviews()
+        addConstraints()
+        
 
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
