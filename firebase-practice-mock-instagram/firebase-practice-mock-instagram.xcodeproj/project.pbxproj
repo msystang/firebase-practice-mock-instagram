@@ -31,6 +31,7 @@
 		EAFA96FD238B59220008F7B2 /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA96FC238B59220008F7B2 /* FirebaseStorageService.swift */; };
 		EAFA96FF238B67A10008F7B2 /* ProfileViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA96FE238B67A10008F7B2 /* ProfileViewController+ImagePicker.swift */; };
 		EAFA9701238B6EC50008F7B2 /* ProfileViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA9700238B6EC50008F7B2 /* ProfileViewController+Constraints.swift */; };
+		EAFA9704238C34960008F7B2 /* ImageUploadViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA9703238C34960008F7B2 /* ImageUploadViewController+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		EAFA96FC238B59220008F7B2 /* FirebaseStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageService.swift; sourceTree = "<group>"; };
 		EAFA96FE238B67A10008F7B2 /* ProfileViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		EAFA9700238B6EC50008F7B2 /* ProfileViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Constraints.swift"; sourceTree = "<group>"; };
+		EAFA9703238C34960008F7B2 /* ImageUploadViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageUploadViewController+Constraints.swift"; sourceTree = "<group>"; };
 		F05052A10CC6B2FF9F5CA026 /* Pods-firebase-practice-mock-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-practice-mock-instagram.release.xcconfig"; path = "Target Support Files/Pods-firebase-practice-mock-instagram/Pods-firebase-practice-mock-instagram.release.xcconfig"; sourceTree = "<group>"; };
 		F5BA91300F8B124F1EE66D6E /* Pods-firebase-practice-mock-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-practice-mock-instagramTests.debug.xcconfig"; path = "Target Support Files/Pods-firebase-practice-mock-instagramTests/Pods-firebase-practice-mock-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				EA30E8BC23846DE500734AE0 /* ImageUploadViewController.swift */,
+				EAFA9703238C34960008F7B2 /* ImageUploadViewController+Constraints.swift */,
 				EA30E8BE23846DEC00734AE0 /* ImageDetailViewController.swift */,
 			);
 			path = Post;
@@ -448,6 +451,7 @@
 				EA30E8C523846EE000734AE0 /* Post.swift in Sources */,
 				EA30E8E1238A442500734AE0 /* FirebaseAuthService.swift in Sources */,
 				EAFA9701238B6EC50008F7B2 /* ProfileViewController+Constraints.swift in Sources */,
+				EAFA9704238C34960008F7B2 /* ImageUploadViewController+Constraints.swift in Sources */,
 				EA30E8B923846DC000734AE0 /* ProfileViewController.swift in Sources */,
 				EA30E89523846BFB00734AE0 /* SceneDelegate.swift in Sources */,
 			);

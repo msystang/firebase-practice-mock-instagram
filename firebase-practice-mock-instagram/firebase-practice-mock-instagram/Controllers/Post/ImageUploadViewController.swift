@@ -14,7 +14,8 @@ class ImageUploadViewController: UIViewController {
     
     lazy var uploadImageLabel: UILabel = {
         let label = UILabel()
-        label.text = "Upload Image"
+        label.text = "Upload New Image"
+        label.textAlignment = .center
         return label
     }()
     
@@ -23,11 +24,26 @@ class ImageUploadViewController: UIViewController {
         imageView.backgroundColor = .yellow
         return imageView
     }()
+
+    lazy var selectImageButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Select Image", for: .normal)
+        return button
+    }()
     
     lazy var uploadButton: UIButton = {
         let button = UIButton()
         button.setTitle("Upload", for: .normal)
         return button
+    }()
+    
+    lazy var buttonStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [selectImageButton,uploadButton])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        stackView.alignment = .center
+        return stackView
     }()
     
     override func viewDidLoad() {
@@ -37,13 +53,4 @@ class ImageUploadViewController: UIViewController {
         addConstraints()
     }
     
-    private func addSubviews() {
-        
-    }
-    
-    private func addConstraints() {
-        
-        
-    }
-
 }
