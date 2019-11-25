@@ -40,6 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             window?.rootViewController = LogInViewController()
         }
+
         window?.makeKeyAndVisible()
         
         

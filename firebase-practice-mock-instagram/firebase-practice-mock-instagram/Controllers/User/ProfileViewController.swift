@@ -30,7 +30,6 @@ class ProfileViewController: UIViewController {
     
     lazy var displayNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "displayName"
         label.textAlignment = .center
         return label
     }()
@@ -40,6 +39,7 @@ class ProfileViewController: UIViewController {
         button.setTitle("Edit", for: .normal)
         button.titleLabel?.font = UIFont(name: "Arial", size: 10)
         button.setTitleColor(.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(editDisplayNameButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -61,6 +61,7 @@ class ProfileViewController: UIViewController {
             self.profileImageView.image = profileImage
         }
     }
+    
     var profileImageURL: String? = nil
     
     var email = String()
@@ -90,6 +91,39 @@ class ProfileViewController: UIViewController {
         updateInfoLabel()
     }
     
+    //MARK: - Objc Functions
+    
+    @objc func editDisplayNameButtonPressed(){
+        let alertController = UIAlertController(title: "Edit Display Name", message: nil, preferredStyle: .alert)
+        alertController.addTextField(configurationHandler: nil)
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [weak alertController, weak self] _ in
+            
+            guard let newDisplayName = alertController?.textFields?[0].text, newDisplayName != "" else {
+                //TODO: showAlert to enter a display name
+                return }
+            
+            FirebaseAuthService.manager.updateUserFields(userName: newDisplayName) { (result) in
+                switch result {
+                case .success:
+                    //TODO: showAlert for success
+                    self?.displayNameLabel.text = newDisplayName
+                    self?.updateDisplayNameInFirestore(newDisplayName: newDisplayName)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel" , style: .cancel)
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+       
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     //MARK: - Private Methods
     
     private func getEmail() {
@@ -114,9 +148,30 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    private func updateDisplayNameInFirestore(newDisplayName: String) {
+        FirestoreService.manager.updateCurrentUser(displayName: newDisplayName, photoURL: nil) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success:
+                print("Updated displayName for user in Firestore")
+            }
+        }
+    }
+    
+    private func getDisplayName() {
+        if let displayName = FirebaseAuthService.manager.currentUser?.displayName {
+            self.displayNameLabel.text = displayName
+        } else {
+            self.displayNameLabel.text = "No display name set"
+        }
+    
+    }
+    
     private func getUserInfo() {
         getEmail()
         getPostCount()
+        getDisplayName()
     }
     
     private func updateInfoLabel() {
