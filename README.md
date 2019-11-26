@@ -1,4 +1,8 @@
 # firebase-practice-mock-instagram
+Project Notes:
+- You will need to "pod install" to download FirebaseAuth, FireStore, FirebaseStorage
+- You will need to add your own Firebase Google plist to the project assets folder
+
 # Pursuit-Core-iOS-Firebase-Project
 
 For this project, build a Firebase-backed application where users can upload and view images.
