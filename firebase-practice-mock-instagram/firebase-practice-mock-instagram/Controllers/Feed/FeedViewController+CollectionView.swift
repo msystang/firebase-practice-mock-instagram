@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-// TODO: Fix bug -> Display Name in Collection View does not update to new users
-
 //MARK: - CollectionView Methods
 extension FeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -44,7 +42,6 @@ extension FeedViewController: UICollectionViewDataSource {
             case .failure(let error):
                 print(error)
             case .success(let displayNameFromFB):
-                // Only works for "Sunni bunny"
                 cell.displayNameLabel.text = displayNameFromFB
             }
         }
@@ -56,7 +53,6 @@ extension FeedViewController: UICollectionViewDataSource {
 }
 
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
-    //TODO: Edit size and configuration of cells
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -79,13 +75,15 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
         if let cellImage = cell.postImageView.image {
             imageDetailVC.postImage = cellImage
         } else {
-            //TODO: Add default image
+            print("Could not pass over image to image details.")
+            imageDetailVC.postImage = UIImage(named: "no-photo") ?? UIImage()
         }
         
         if let cellName = cell.displayNameLabel.text {
             imageDetailVC.displayName = cellName
         } else {
-            //TODO: handle no displayName
+            print("Could not pass over display name to image details.")
+            imageDetailVC.displayName = "N/A"
         }
         
         present(imageDetailVC, animated: true, completion: nil)

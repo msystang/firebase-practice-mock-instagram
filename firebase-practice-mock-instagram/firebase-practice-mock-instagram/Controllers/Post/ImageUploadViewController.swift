@@ -10,6 +10,8 @@ import UIKit
 
 class ImageUploadViewController: UIViewController {
     
+    //TODO: Set bool property to indicate profile completion, add alert if profile is not completed, add condition for userName too
+    
     //MARK: - UI Objects
     lazy var uploadImageLabel: UILabel = {
         let label = UILabel()

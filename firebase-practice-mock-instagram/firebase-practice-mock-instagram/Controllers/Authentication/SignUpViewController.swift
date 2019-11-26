@@ -134,7 +134,6 @@ class SignUpViewController: UIViewController {
                     window.rootViewController = {
                         let profileVC = AppTabBarViewController()
                             profileVC.selectedIndex = 2
-                        //TODO: Set bool property to indicate profile completion, add alert if profile is not completed, add condition for userName too
                         return profileVC
                     }()
                 }
