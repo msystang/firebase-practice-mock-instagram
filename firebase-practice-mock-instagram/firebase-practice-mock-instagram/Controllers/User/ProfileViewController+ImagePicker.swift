@@ -35,7 +35,6 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                     case .failure(let error):
                         print(error)
                     case .success(()):
-                        //TODO: showAlert - saved
                         print("Photo saved in FirebaseAuth.")
                     }
                 }
@@ -44,9 +43,11 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                     case .failure(let error):
                         print(error)
                     case .success(()):
-                        print("Photo saved in Firestore")
+                        print("Photo saved in Firestore.")
                     }
                 }
+                self?.showAlert(title: "Success!", message: "Profile picture saved.")
+                
             case .failure(let error):
                 print(error)
             }

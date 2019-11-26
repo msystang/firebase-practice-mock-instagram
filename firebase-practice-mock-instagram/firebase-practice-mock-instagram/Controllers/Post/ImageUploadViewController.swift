@@ -86,7 +86,6 @@ class ImageUploadViewController: UIViewController {
             case .failure(let error):
                 print(error)
                 self.showAlert(title: "Error", message: "Could not upload post: \(error)")
-                //TODO: segue to FeedVC
             case .success:
                 self.showAlert(title: "Success", message: "Image posted successfully!")
             }

@@ -149,6 +149,13 @@ class ProfileViewController: UIViewController {
         
     }
     
+    //MARK: - Public Functions
+    func showAlert(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        present(alertVC, animated: true, completion: nil)
+        dismiss(animated: true)
+    }
+    
     //MARK: - Private Methods
     private func getUserInfo() {
         getEmail()
@@ -232,4 +239,5 @@ class ProfileViewController: UIViewController {
                 window.rootViewController = LogInViewController()
         })
     }
+
 }
