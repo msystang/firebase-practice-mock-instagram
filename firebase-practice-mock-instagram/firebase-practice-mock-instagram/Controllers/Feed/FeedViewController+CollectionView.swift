@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// TODO: Fix bug -> Display Name in Collection View does not update to new user
+// TODO: Fix bug -> Display Name in Collection View does not update to new users
 
 //MARK: - CollectionView Methods
 extension FeedViewController: UICollectionViewDataSource {
@@ -21,23 +21,22 @@ extension FeedViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
         let post = posts[indexPath.row]
 
-        
-        //TODO: Make separate func?
+        //Load post image
         if let postImageUrlStr = post.photoURL {
             FirebaseStorageService.postManager.getImage(photoUrl: nil, photoUrlStr: postImageUrlStr, completion: { (result) in
                 switch result {
                     case .failure(let error):
                     print(error)
-                    //TODO: Add default image
+                    cell.postImageView.image = UIImage(named: "no-photo")
                 case .success(let imageFromFB):
                     cell.postImageView.image = imageFromFB
                 }
             })
         } else {
-            //TODO: add default image
+            cell.postImageView.image = UIImage(named: "no-photo")
         }
     
-        //TODO: load displayName
+        //Load display name
         let creatorID = post.creatorID
         
         FirestoreService.manager.getDisplayNameForUser(creatorID: creatorID) { (result) in
@@ -45,6 +44,7 @@ extension FeedViewController: UICollectionViewDataSource {
             case .failure(let error):
                 print(error)
             case .success(let displayNameFromFB):
+                // Only works for "Sunni bunny"
                 cell.displayNameLabel.text = displayNameFromFB
             }
         }

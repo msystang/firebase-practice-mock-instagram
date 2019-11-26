@@ -95,6 +95,8 @@ class FirestoreService {
                 let data = snapshot.data() {
                 let userID = snapshot.documentID
                 let user = AppUser(from: data, id: userID)
+                // Only first user comes in as not nil
+                print(data)
                 if let appUser = user {
                     completion(.success(appUser.displayName ?? ""))
                 }

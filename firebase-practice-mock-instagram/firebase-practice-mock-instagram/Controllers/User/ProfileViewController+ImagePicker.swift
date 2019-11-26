@@ -39,6 +39,14 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                         print("Photo saved in FirebaseAuth.")
                     }
                 }
+                FirestoreService.manager.updateCurrentUser(displayName: nil, photoURL: url) { (result) in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(()):
+                        print("Photo saved in Firestore")
+                    }
+                }
             case .failure(let error):
                 print(error)
             }
