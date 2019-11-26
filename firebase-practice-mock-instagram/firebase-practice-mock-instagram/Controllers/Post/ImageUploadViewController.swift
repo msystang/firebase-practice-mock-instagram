@@ -10,8 +10,6 @@ import UIKit
 
 class ImageUploadViewController: UIViewController {
     
-    //TODO: Set bool property to indicate profile completion, add alert if profile is not completed, add condition for userName too
-    
     //MARK: - UI Objects
     lazy var uploadImageLabel: UILabel = {
         let label = UILabel()
@@ -105,6 +103,7 @@ class ImageUploadViewController: UIViewController {
     //MARK: - Private Methods
     
     private func checkProfileCompletion() {
+        //TODO: Refactor using AppUser
         let currentUser = FirebaseAuthService.manager.currentUser
         
         if currentUser?.displayName != nil && currentUser?.photoURL != nil {

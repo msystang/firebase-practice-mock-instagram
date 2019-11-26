@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class ProfileViewController: UIViewController {
 
@@ -76,15 +77,14 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    var photoLibraryAccess: Bool = false
+    
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getUserInfo()
-        
         addSubviews()
         addConstraints()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,6 +127,8 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func editProfileImageButtonPressed() {
+        checkPhotoLibraryAccess()
+        
         let imagePickerViewController = UIImagePickerController()
         imagePickerViewController.delegate = self
         imagePickerViewController.sourceType = .photoLibrary
@@ -156,6 +158,38 @@ class ProfileViewController: UIViewController {
     }
     
     //MARK: - Private Methods
+    
+    private func checkPhotoLibraryAccess() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        
+        switch status {
+        case .authorized:
+            print(status)
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({status in
+                switch status {
+                case .authorized:
+                    self.photoLibraryAccess = true
+                    print(status)
+                case .denied:
+                    self.photoLibraryAccess = false
+                    print("denied")
+                case .notDetermined:
+                    print("not determined")
+                case .restricted:
+                    print("restricted")
+                }
+            })
+            
+        case .denied:
+            let alertVC = UIAlertController(title: "Denied", message: "Camera access is required to use this app. Please change your preference in the Settings app", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction (title: "OK", style: .default, handler: nil))
+            self.present(alertVC, animated: true, completion: nil)
+        case .restricted:
+            print("restricted: No camera access")
+        }
+    }
+    
     private func getUserInfo() {
         getEmail()
         getPostCount()
