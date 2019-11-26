@@ -9,9 +9,8 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    
-    //TODO: Set alert that does not allow user to create new post if user profile is incomplete
-    //TODO: Add collection view to show only currentUser posts
+
+    // TODO: Add permissions for photo library
     
     //MARK: - UI Objects
     

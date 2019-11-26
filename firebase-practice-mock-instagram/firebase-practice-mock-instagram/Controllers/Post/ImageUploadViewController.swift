@@ -61,12 +61,20 @@ class ImageUploadViewController: UIViewController {
     //MARK: - Internal Properties
     var postImageURL: String? = nil
     
+    var isProfileComplete: Bool = false
+    
     //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addSubviews()
         addConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        checkProfileCompletion()
     }
     
     //MARK: - Objc Functions
@@ -87,15 +95,46 @@ class ImageUploadViewController: UIViewController {
             switch result {
             case .failure(let error):
                 print(error)
-                self.showAlert(title: "Error", message: "Could not upload post: \(error)")
+                self.showAlertAfterImageUpload(title: "Error", message: "Could not upload post: \(error)")
             case .success:
-                self.showAlert(title: "Success", message: "Image posted successfully!")
+                self.showAlertAfterImageUpload(title: "Success", message: "Image posted successfully!")
             }
         }
     }
     
     //MARK: - Private Methods
-    private func showAlert(title: String, message: String) {
+    
+    private func checkProfileCompletion() {
+        let currentUser = FirebaseAuthService.manager.currentUser
+        
+        if currentUser?.displayName != nil && currentUser?.photoURL != nil {
+            isProfileComplete = true
+        } else {
+            isProfileComplete = false
+        }
+        
+        handleIncompleteProfile()
+    }
+    
+    private func handleIncompleteProfile() {
+        switch isProfileComplete {
+        case false:
+            showAlertForProfileCompletion()
+        case true:
+            return
+        }
+    }
+    
+    private func showAlertForProfileCompletion() {
+        let alertVC = UIAlertController(title: "Wait!", message: "You must complete your profile before posting.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.goToProfile()
+        }
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true, completion: nil)
+    }
+    
+    private func showAlertAfterImageUpload(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         present(alertVC, animated: true, completion: nil)
         dismiss(animated: true) {
@@ -113,6 +152,20 @@ class ImageUploadViewController: UIViewController {
                     let feedVC = AppTabBarViewController()
                     feedVC.selectedIndex = 0
                     return feedVC
+                }()
+        })
+    }
+    
+    private func goToProfile() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+            else { return }
+        
+        UIView.transition(with: window, duration: 0.2, options: .transitionFlipFromLeft, animations: {
+                window.rootViewController = {
+                    let profileVC = AppTabBarViewController()
+                    profileVC.selectedIndex = 2
+                    return profileVC
                 }()
         })
     }
